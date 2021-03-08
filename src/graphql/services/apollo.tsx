@@ -11,7 +11,7 @@ import Sentry from '~/sentry'
 // ensure that queries can run on the server during SSR and SSG
 // @ts-ignore
 global.fetch = require('node-fetch')
-let globalApolloClient = null
+let globalApolloClient: any = null
 
 export const endpoint = `${CLIENT_URL}/api/graphql`
 

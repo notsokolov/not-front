@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import CenteredColumn from '../CenteredColumn'
+import {CenteredColumn} from '../CenteredColumn'
 
 export function Footer() {
   return (

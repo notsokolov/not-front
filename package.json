@@ -10,6 +10,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.11",
     "@apollo/link-error": "^2.0.0-beta.3",
+    "@sentry/browser": "^6.2.1",
     "@sentry/node": "^6.2.1",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.4.0",

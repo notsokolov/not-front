@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Page, { PageHeader } from '~/components/Page'
 import { Post } from '~/graphql/types.generated'
-import OverthoughtList from '~/components/Overthought/List'
+import OverthoughtList from '~/components/Blog/List'
 import { GET_POSTS } from '~/graphql/queries'
 import { initApolloClient } from '~/graphql/services/apollo'
 import { CenteredColumn } from '~/components/CenteredColumn'

@@ -31,8 +31,8 @@ const NavLinks = ({ activeRoute }: Props) => {
       </Label>
 
       <Label isActive={activeRoute === 'Writing'}>
-        <Link href="/overthought">
-          <a>Writing</a>
+        <Link href="/blog">
+          <a>Blog</a>
         </Link>
       </Label>
 

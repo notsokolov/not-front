@@ -1,6 +1,6 @@
-import * as React from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import * as React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   Container,
   MobileContainer,
@@ -9,46 +9,46 @@ import {
   CloseButton,
   Label,
   Background,
-} from './style'
+} from "./style";
 
 interface Props {
-  activeRoute: string
+  activeRoute: string;
 }
 
 const NavLinks = ({ activeRoute }: Props) => {
   return (
     <React.Fragment>
-      <Label isActive={activeRoute === 'Home'}>
+      <Label isActive={activeRoute === "Home"}>
         <Link href="/">
           <a>Home</a>
         </Link>
       </Label>
 
-      <Label isActive={activeRoute === 'About'}>
+      <Label isActive={activeRoute === "About"}>
         <Link href="/about">
           <a>About</a>
         </Link>
       </Label>
 
-      <Label isActive={activeRoute === 'Writing'}>
+      <Label isActive={activeRoute === "Writing"}>
         <Link href="/blog">
           <a>Blog</a>
         </Link>
       </Label>
 
-      <Label isActive={activeRoute === 'App Dissection'}>
+      <Label isActive={activeRoute === "App Dissection"}>
         <Link href="/design-details">
           <a>App Dissection</a>
         </Link>
       </Label>
 
-      <Label isActive={activeRoute === 'Ask Me Anything'}>
+      <Label isActive={activeRoute === "Ask Me Anything"}>
         <Link href="/ama">
           <a>AMA</a>
         </Link>
       </Label>
 
-      <Label isActive={activeRoute === 'Bookmarks'}>
+      <Label isActive={activeRoute === "Bookmarks"}>
         <Link href="/bookmarks">
           <a>Bookmarks</a>
         </Link>
@@ -60,46 +60,46 @@ const NavLinks = ({ activeRoute }: Props) => {
         </Link>
       </Label> */}
     </React.Fragment>
-  )
-}
+  );
+};
 
 export default function Header() {
-  const [isExpanded, setExpanded] = React.useState(false)
-  const router = useRouter()
+  const [isExpanded, setExpanded] = React.useState(false);
+  const router = useRouter();
 
-  let activeRoute = ''
-  let activePath = ''
-  if (router.pathname === '/') {
-    activeRoute = 'Home'
-    activePath = '/'
+  let activeRoute = "";
+  let activePath = "";
+  if (router.pathname === "/") {
+    activeRoute = "Home";
+    activePath = "/";
   }
-  if (router.pathname.startsWith('/about')) {
-    activeRoute = 'About'
-    activePath = '/about'
+  if (router.pathname.startsWith("/about")) {
+    activeRoute = "About";
+    activePath = "/about";
   }
-  if (router.pathname.includes('/bookmarks')) {
-    activeRoute = 'Bookmarks'
-    activePath = '/bookmarks'
+  if (router.pathname.includes("/bookmarks")) {
+    activeRoute = "Bookmarks";
+    activePath = "/bookmarks";
   }
-  if (router.pathname.includes('/design-details')) {
-    activeRoute = 'App Dissection'
-    activePath = '/design-details'
+  if (router.pathname.includes("/design-details")) {
+    activeRoute = "App Dissection";
+    activePath = "/design-details";
   }
-  if (router.pathname.includes('/overthought')) {
-    activeRoute = 'Writing'
-    activePath = '/overthought'
+  if (router.pathname.includes("/overthought")) {
+    activeRoute = "Writing";
+    activePath = "/overthought";
   }
-  if (router.pathname.includes('/ama')) {
-    activeRoute = 'Ask Me Anything'
-    activePath = '/ama'
+  if (router.pathname.includes("/ama")) {
+    activeRoute = "Ask Me Anything";
+    activePath = "/ama";
   }
-  if (router.pathname.includes('/hn')) {
-    activeRoute = 'Hacker News'
-    activePath = '/hn'
+  if (router.pathname.includes("/hn")) {
+    activeRoute = "Hacker News";
+    activePath = "/hn";
   }
-  if (router.pathname.includes('/security')) {
-    activeRoute = 'Security Checklist'
-    activePath = '/security'
+  if (router.pathname.includes("/security")) {
+    activeRoute = "Security Checklist";
+    activePath = "/security";
   }
 
   return (
@@ -130,7 +130,7 @@ export default function Header() {
                 width="16"
                 height="16"
               >
-                {' '}
+                {" "}
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -154,5 +154,5 @@ export default function Header() {
         <Background className="bg-white bg-opacity-60 dark:bg-gray-900" />
       </Container>
     </React.Fragment>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client'
+import { gql } from "@apollo/client";
 
 export const PostInfoFragment = gql`
   fragment PostInfo on Post {
@@ -10,4 +10,4 @@ export const PostInfoFragment = gql`
     feature_image
     html
   }
-`
+`;

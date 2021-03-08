@@ -1,5 +1,5 @@
-const path = require('path')
-const withSourceMaps = require('@zeit/next-source-maps') 
+const path = require("path");
+const withSourceMaps = require("@zeit/next-source-maps");
 // ()
 // const withBundleAnalyzer = require('@next/bundle-analyzer')({
 //   enabled: process.env.ANALYZE === 'true',
@@ -7,16 +7,16 @@ const withSourceMaps = require('@zeit/next-source-maps')
 
 module.exports = withSourceMaps({
   images: {
-    domains: ['pbs.twimg.com'],
+    domains: ["pbs.twimg.com"],
   },
   env: {},
   webpack: (config, { isServer }) => {
-    config.resolve.alias['~'] = path.resolve('./src')
+    config.resolve.alias["~"] = path.resolve("./src");
 
     if (!isServer) {
-      config.resolve.alias['@sentry/node'] = '@sentry/browser'
+      config.resolve.alias["@sentry/node"] = "@sentry/browser";
     }
 
-    return config
+    return config;
   },
-})
+});

@@ -1,14 +1,14 @@
-import * as React from 'react'
-import { format } from 'timeago.js'
-import { Post } from '~/graphql/types.generated'
-import Link from 'next/link'
+import * as React from "react";
+import { format } from "timeago.js";
+import { Post } from "~/graphql/types.generated";
+import Link from "next/link";
 
 interface Props {
-  posts: Post[]
+  posts: Post[];
 }
 
 export default function OverthoughtList({ posts }: Props) {
-  if (!posts || posts.length === 0) return null
+  if (!posts || posts.length === 0) return null;
   return (
     <div className="flex flex-col space-y-5">
       {posts.map((post) => (
@@ -25,5 +25,5 @@ export default function OverthoughtList({ posts }: Props) {
         </div>
       ))}
     </div>
-  )
+  );
 }

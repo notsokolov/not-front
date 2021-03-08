@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components'
-import theme from '../Theme'
+import styled, { css } from "styled-components";
+import theme from "../Theme";
 
 const base = css`
   padding: 5px 8px 4px;
@@ -19,7 +19,7 @@ const base = css`
     text-align: center;
     margin: 0 1px;
   }
-`
+`;
 
 export const Background = styled.div`
   position: absolute;
@@ -30,7 +30,7 @@ export const Background = styled.div`
   z-index: -1;
   box-shadow: 0 1px 0px rgba(0, 0, 0, 0.06);
   backdrop-filter: saturate(180%) blur(20px);
-`
+`;
 
 export const Container = styled.header`
   ${base};
@@ -42,7 +42,7 @@ export const Container = styled.header`
   @media (max-width: ${theme.breakpoints[4]}) {
     display: none;
   }
-`
+`;
 
 export const InnerGrid = styled.div`
   display: grid;
@@ -53,16 +53,16 @@ export const InnerGrid = styled.div`
   position: relative;
   grid-template-columns: repeat(6, max-content);
   z-index: 3;
-`
+`;
 
 export const MobileContainer = styled.header`
   ${base};
 
   font-size: 16px;
   justify-content: center;
-  align-items: ${(props) => (props.expanded ? 'flex-start' : 'center')};
-  flex-direction: ${(props) => (props.expanded ? 'column' : 'row')};
-  padding-bottom: ${(props) => (props.expanded ? '16px' : '4px')};
+  align-items: ${(props) => (props.expanded ? "flex-start" : "center")};
+  flex-direction: ${(props) => (props.expanded ? "column" : "row")};
+  padding-bottom: ${(props) => (props.expanded ? "16px" : "4px")};
 
   a {
     text-align: left;
@@ -75,27 +75,27 @@ export const MobileContainer = styled.header`
   @media (max-width: ${theme.breakpoints[4]}) {
     display: flex;
   }
-`
+`;
 
 export const CloseButton = styled.div`
   position: relative;
-  display: ${(props) => (props.visible ? 'block' : 'none')};
+  display: ${(props) => (props.visible ? "block" : "none")};
   font-size: 26px;
   font-weight: 300;
   cursor: pointer;
   z-index: 3;
   position: relative;
-`
+`;
 
 export const MenuButton = styled.div`
   padding: 0 8px;
   cursor: pointer;
   z-index: 3;
   position: relative;
-`
+`;
 
 export const Label = styled.span.attrs(({ isActive }) => ({
-  className: `nav-label ${isActive && 'active'}`,
+  className: `nav-label ${isActive && "active"}`,
 }))`
   display: flex;
   flex: 1;
@@ -113,4 +113,4 @@ export const Label = styled.span.attrs(({ isActive }) => ({
       text-align: left;
     }
   }
-`
+`;

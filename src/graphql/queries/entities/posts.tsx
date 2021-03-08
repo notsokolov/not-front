@@ -1,5 +1,5 @@
-import { PostInfoFragment } from '../../fragments/post'
-import { gql } from '@apollo/client'
+import { PostInfoFragment } from "../../fragments/post";
+import { gql } from "@apollo/client";
 
 export const GET_POSTS = gql`
   query GetPosts {
@@ -8,7 +8,7 @@ export const GET_POSTS = gql`
     }
   }
   ${PostInfoFragment}
-`
+`;
 
 export const GET_POST = gql`
   query GetPost($slug: String!, $first: Int) {
@@ -17,4 +17,4 @@ export const GET_POST = gql`
     }
   }
   ${PostInfoFragment}
-`
+`;

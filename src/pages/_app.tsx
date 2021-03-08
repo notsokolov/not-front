@@ -1,12 +1,11 @@
 // import App from "next/app";
-import type { AppProps /*, AppContext */ } from 'next/app'
-import '~/styles/tailwind.css'
-import '~/styles/custom-styles.css'
-import 'tailwindcss/utilities.css'
-
+import type { AppProps /*, AppContext */ } from "next/app";
+import "~/styles/tailwind.css";
+import "~/styles/custom-styles.css";
+import "tailwindcss/utilities.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -21,9 +20,4 @@ function MyApp({ Component, pageProps }: AppProps) {
 //   return { ...appProps }
 // }
 
-
-
-
-
-
-export default MyApp
+export default MyApp;

@@ -1,6 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
-import {CenteredColumn} from '../CenteredColumn'
+import React from "react";
+import Link from "next/link";
+import { CenteredColumn } from "../CenteredColumn";
 
 export function Footer() {
   return (
@@ -53,5 +53,5 @@ export function Footer() {
         </div>
       </div>
     </CenteredColumn>
-  )
+  );
 }

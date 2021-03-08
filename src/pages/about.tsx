@@ -1,9 +1,7 @@
-import * as React from 'react'
-import Image from 'next/image'
-import Page from '~/components/Page'
-import { CenteredColumn } from '~/components/CenteredColumn'
-
-
+import * as React from "react";
+import Image from "next/image";
+import Page from "~/components/Page";
+import { CenteredColumn } from "~/components/CenteredColumn";
 
 function About() {
   return (
@@ -13,7 +11,7 @@ function About() {
           <div className="-mx-4 -mt-24 md:mt-0 md:-mx-8 ">
             <Image
               src="https://pbs.twimg.com/profile_images/288025495/MET-ART_vol_56_0003.jpg"
-              alt={'A photo of me'}
+              alt={"A photo of me"}
               layout="responsive"
               width="500px"
               height="750px"
@@ -27,15 +25,15 @@ function About() {
                 living in San Francisco.
               </p>
               <p>
-                Right now I’m designing{' '}
+                Right now I’m designing{" "}
                 <a
                   href="https://github.com/mobile"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   native mobile apps
-                </a>{' '}
-                at{' '}
+                </a>{" "}
+                at{" "}
                 <a
                   href="https://github.com/brianlovin"
                   target="_blank"
@@ -43,7 +41,7 @@ function About() {
                 >
                   GitHub
                 </a>
-                . Before GitHub, I co-founded{' '}
+                . Before GitHub, I co-founded{" "}
                 <a
                   href="https://spectrum.chat"
                   target="_blank"
@@ -58,7 +56,7 @@ function About() {
               <p>
                 Before Spectrum I designed payments experiences at Facebook,
                 working across Facebook, Messenger, WhatsApp, and Instagram. I
-                originally cut my teeth as the first product designer at{' '}
+                originally cut my teeth as the first product designer at{" "}
                 <a
                   href="https://buffer.com"
                   target="_blank"
@@ -69,7 +67,7 @@ function About() {
                 .
               </p>
               <p>
-                I also co-host the{' '}
+                I also co-host the{" "}
                 <a
                   href="https://designdetails.fm"
                   target="_blank"
@@ -78,7 +76,7 @@ function About() {
                   Design Details Podcast
                 </a>
                 , a weekly conversation about design process and culture. Design
-                Details is part of{' '}
+                Details is part of{" "}
                 <a
                   href="https://spec.fm"
                   target="_blank"
@@ -90,36 +88,36 @@ function About() {
                 co-founded in 2015.
               </p>
               <p>
-                You can find me on{' '}
+                You can find me on{" "}
                 <a
                   href="https://twitter.com/brian_lovin"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Twitter
-                </a>{' '}
-                where I talk about design and development, or on{' '}
+                </a>{" "}
+                where I talk about design and development, or on{" "}
                 <a
                   href="https://github.com/brianlovin"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   GitHub
-                </a>{' '}
-                where I’m building in the open, or on{' '}
+                </a>{" "}
+                where I’m building in the open, or on{" "}
                 <a
                   href="https://figma.com/@brian"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Figma
-                </a>{' '}
+                </a>{" "}
                 where I’m exploring how plugins can automate the tedious parts
                 of interface design.
               </p>
               <p>
                 <em>
-                  Photo by{' '}
+                  Photo by{" "}
                   <a
                     href="https://twitter.com/rxnjmmt"
                     target="_blank"
@@ -130,14 +128,11 @@ function About() {
                 </em>
               </p>
             </div>
-
-
-         </div>
+          </div>
         </div>
       </CenteredColumn>
     </Page>
-  )
+  );
 }
 
-
-export default About
+export default About;

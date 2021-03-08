@@ -1,7 +1,7 @@
-import * as React from 'react'
-import Link from 'next/link'
-import Page, { PageHeader } from '~/components/Page/index.tsx'
-import  { CenteredColumn } from '~/components/CenteredColumn'
+import * as React from "react";
+import Link from "next/link";
+import Page, { PageHeader } from "~/components/Page/index.tsx";
+import { CenteredColumn } from "~/components/CenteredColumn";
 // import { Timeline } from '~/components/Timeline'
 
 function Home() {
@@ -40,7 +40,7 @@ function Home() {
         </div>
       </CenteredColumn>
     </Page>
-  )
+  );
 }
 
-export default Home
+export default Home;

@@ -1,8 +1,8 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ['./src/**/*.tsx'],
-  darkMode: 'media', // 'media' or 'class'
+  purge: ["./src/**/*.tsx"],
+  darkMode: "media", // 'media' or 'class'
   theme: {
     colors: {
       yellow: colors.yellow,
@@ -13,7 +13,7 @@ module.exports = {
       green: colors.green,
       pink: colors.pink,
       indigo: colors.indigo,
-      white: '#fff',
+      white: "#fff",
     },
     lineClamp: {
       1: 1,
@@ -25,44 +25,44 @@ module.exports = {
         DEFAULT: {
           css: {
             blockQuote: {
-              fontWeight: '400',
+              fontWeight: "400",
             },
             img: {
-              borderRadius: '8px',
+              borderRadius: "8px",
             },
             h4: {
-              fontSize: '1.5rem',
-              fontWeight: '800',
+              fontSize: "1.5rem",
+              fontWeight: "800",
             },
             h5: {
-              fontSize: '1.3rem',
-              marginTop: '2.5rem',
-              marginBottom: '-0.75rem',
+              fontSize: "1.3rem",
+              marginTop: "2.5rem",
+              marginBottom: "-0.75rem",
             },
             a: {
-              color: theme('colors.blue.500'),
-              textDecoration: 'none',
+              color: theme("colors.blue.500"),
+              textDecoration: "none",
             },
           },
         },
       }),
       boxShadow: {
         cardHover:
-          '0 4px 4.1px rgba(0, 0, 0, 0.012),0 4.9px 5.8px rgba(0, 0, 0, 0.018),0 6.3px 8.4px rgba(0, 0, 0, 0.029),0 8.8px 12.9px rgba(0, 0, 0, 0.05),0 15px 23px rgba(0, 0, 0, 0.11)',
+          "0 4px 4.1px rgba(0, 0, 0, 0.012),0 4.9px 5.8px rgba(0, 0, 0, 0.018),0 6.3px 8.4px rgba(0, 0, 0, 0.029),0 8.8px 12.9px rgba(0, 0, 0, 0.05),0 15px 23px rgba(0, 0, 0, 0.11)",
       },
       colors: {
-        'gray-1000': '#050505',
+        "gray-1000": "#050505",
       },
     },
   },
   variants: {
     extend: {
-      textColor: ['visited'],
+      textColor: ["visited"],
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('tailwindcss-line-clamp'),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("tailwindcss-line-clamp"),
   ],
-}
+};

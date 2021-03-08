@@ -1,21 +1,20 @@
-import * as React from 'react'
-import Page, { PageHeader } from '~/components/Page'
-import { Post } from '~/graphql/types.generated'
-import OverthoughtList from '~/components/Blog/List'
-import { GET_POSTS } from '~/graphql/queries'
-import { initApolloClient } from '~/graphql/services/apollo'
-import { CenteredColumn } from '~/components/CenteredColumn'
+import * as React from "react";
+import Page, { PageHeader } from "~/components/Page";
+import { Post } from "~/graphql/types.generated";
+import OverthoughtList from "~/components/Blog/List";
+import { GET_POSTS } from "~/graphql/queries";
+import { initApolloClient } from "~/graphql/services/apollo";
+import { CenteredColumn } from "~/components/CenteredColumn";
 
 interface Props {
   data: {
-    posts: Post[]
-  }
+    posts: Post[];
+  };
 }
 
-function Overthought({ data }: Props) {
+function Blog({ data }: Props) {
   return (
     <Page data-cy="overthought">
-
       <CenteredColumn>
         <div className="flex flex-col space-y-14">
           <PageHeader
@@ -28,19 +27,19 @@ function Overthought({ data }: Props) {
         </div>
       </CenteredColumn>
     </Page>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const client = await initApolloClient({})
-  const { data } = await client.query({ query: GET_POSTS })
+  const client = await initApolloClient({});
+  const { data } = await client.query({ query: GET_POSTS });
   return {
     // because this data is slightly more dynamic, update it every hour
     revalidate: 60 * 60,
     props: {
       data,
     },
-  }
+  };
 }
 
-export default Overthought
+export default Blog;

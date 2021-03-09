@@ -1,17 +1,17 @@
 import React from "react";
 import { TDate } from "timeago.js";
-import { UploadFile } from "~/graphql/types.generated";
+import { Post, UploadFile } from "~/graphql/types.generated";
 import { PostImage } from "../PostImage";
 import { PostTitle } from "../PostTitle";
 import { UpdatedAt } from "../UpdatedAt";
 
-interface Props {
-  title: string;
-  coverImage: UploadFile;
-  updatedAt: TDate;
-}
+// interface Props {
+//   title: string;
+//   coverImage: UploadFile;
+//   updatedAt: TDate;
+// }
 
-export function PostHeader({ title, coverImage, updatedAt }: Props) {
+export function PostHeader({ title, coverImage, updatedAt }) {
   return (
     <>
       <div className="flex flex-col space-y-4">

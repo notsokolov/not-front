@@ -1,34 +1,51 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 
-import { markdownToHtml } from "../../../lib/markdownToHtml";
-import { getAllPostsWithSlug } from "../api";
+import { markdownToHtml } from "../../lib/markdownToHtml";
+import { getAllPostsWithSlug } from "../../../src/lib/api";
 
 // import {PostBody} from '../../components/Blog/PostBody'
-import { PostTitle } from "../../../components/BlogPost/PostTitle";
-import { BlogPost } from "../../../components/BlogPost";
+import { PostTitle } from "../../components/BlogPost/PostTitle";
+import { BlogPost } from "../../components/BlogPost";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { getPostAndMorePosts } from "~/lib/api";
+import { Post } from "~/graphql/types.generated";
 
-export default function Post({ post, preview }) {
+export default function SinglePost({
+  post,
+  preview,
+}: {
+  post: Post;
+  preview: boolean;
+}) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return (
       <CenteredColumn preview={preview}>
-      <h1>Zalupa</h1>
+        <h1>Zalupa 1 </h1>
         <ErrorPage statusCode={404} />
       </CenteredColumn>
     );
   }
   return (
     <CenteredColumn preview={preview}>
-      {/* {router.isFallback ? <PostTitle title="zalupa" /> : <h1>Fuck Off!</h1>} */}
-      <h1>Zalupa</h1>
+      {router.isFallback ? (
+        <PostTitle title="Loading..." />
+      ) : (
+        // <p>{post.content}</p>
+        <BlogPost post={post} />
+      )}
     </CenteredColumn>
   );
 }
 
-export async function getStaticProps({ params , preview = false } : { params : any, preview: boolean}) {
+export async function getStaticProps({
+  params,
+  preview = false,
+}: {
+  params: any;
+  preview: boolean;
+}) {
   const data = await getPostAndMorePosts(params.slug, preview);
   const content = await markdownToHtml(data?.posts[0]?.content || "");
 

@@ -1,34 +1,26 @@
 import * as React from "react";
-import { UploadFile } from "~/graphql/types.generated";
+import { Post, UploadFile } from "~/graphql/types.generated";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { PostHeader } from "../../components/BlogPost/PostHeader";
 
 import Head from "next/head";
-import { TDate } from "timeago.js";
-import PostBody from "./PostBody";
+import { PostBody } from "./PostBody";
 
-interface BlogPost {
-  title: string;
-  coverImage: UploadFile;
-  updatedAt: TDate;
-  content: string;
-}
-
-export function BlogPost(post: BlogPost[]) {
+export function BlogPost({ title, coverImage, updatedAt, content }: Post) {
   return (
     <React.Fragment>
       <CenteredColumn data-cy="overthought-post">
         <article>
           <Head>
-            <title>{post.title} | Next.js Blog Example with Strapi</title>
-            <meta property="og:image" content={post.ogImage.url} />
+            <title>{title}</title>
+            {/* <meta property="og:image" content={post.ogImage.url} /> */}
           </Head>
           <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            updatedAt={post.updatedAt}
+            title={title}
+            coverImage={coverImage}
+            updatedAt={updatedAt}
           />
-          <PostBody content={post.content} />
+          <PostBody content={content} />
         </article>
       </CenteredColumn>
     </React.Fragment>

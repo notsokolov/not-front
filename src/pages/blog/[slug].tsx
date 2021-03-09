@@ -1,19 +1,13 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 
-
-import Layout from "@/components/layout";
-import markdownToHtml from "@/lib/markdownToHtml";
+import markdownToHtml from "../../lib/markdownToHtml";
 import { getAllPostsWithSlug } from "@/lib/api";
-
-
-
 
 // import {PostBody} from '../../components/Blog/PostBody'
 import { PostTitle } from "../../components/BlogPost/PostTitle";
 import { BlogPost } from "../../components/BlogPost";
-
-
+import { CenteredColumn } from "~/components/CenteredColumn";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
@@ -21,11 +15,9 @@ export default function Post({ post, preview }) {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <Layout preview={preview}>
-      {router.isFallback ? (      <PostTitle title="zalupa" />      ) : (
-<BlogPost />
-      )}
-    </Layout>
+    <CenteredColumn preview={preview}>
+      {router.isFallback ? <PostTitle title="zalupa" /> : <BlogPost />}
+    </CenteredColumn>
   );
 }
 

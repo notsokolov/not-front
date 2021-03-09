@@ -4,7 +4,7 @@ import parse from "rehype-parse";
 import rehype2remark from "rehype-remark";
 import stringify from "remark-stringify";
 import { Post } from "~/graphql/types.generated";
-import Markdown from "~/components/MarkdownRenderer";
+import Markdown from "../../MardownRenderer";
 
 interface Props {
   post: Post;

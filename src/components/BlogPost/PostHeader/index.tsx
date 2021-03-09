@@ -3,7 +3,7 @@ import { TDate } from "timeago.js";
 import { UploadFile } from "~/graphql/types.generated";
 import { PostImage } from "../PostImage";
 import { PostTitle } from "../PostTitle";
-import { UpdatedAt }from "../UpdatedAt";
+import { UpdatedAt } from "../UpdatedAt";
 
 interface Props {
   title: string;

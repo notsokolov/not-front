@@ -22,15 +22,7 @@ export default function BlogList({ posts } : Props) {
           {post.excerpt && <p className="clamp-2">{post.excerpt}</p>}
           <p className="p-small">Updated {format(post.updatedAt)}</p>
         </div>
-        <div className="flex flex-col space-y-8">
-          {post.picture && (
-            <FeaturedImage alt={post.title}  src={post.coverImage.url} />
-          )}
-          <div className="flex flex-col space-y-4">
-            <h1>{post.title}</h1>
-            <p className="p-small">Updated {format(post.updatedAt)}</p>
-          </div>
-        </div>
+
         </>
       ))}
     </div>

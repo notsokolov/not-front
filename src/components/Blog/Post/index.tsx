@@ -1,24 +1,21 @@
 import * as React from "react";
-// import { Post } from '~/graphql/types.generated'
+import { Post } from '~/graphql/types.generated'
 import { FeaturedImage } from "./style";
 import { format } from "timeago.js";
 import { CenteredColumn } from "~/components/CenteredColumn";
 
-// interface Props {
-//   post: Post
-// }
-
-export default function PostView({ post }) {
+export default function PostView( post : Post[]) {
   return (
     <React.Fragment>
       <CenteredColumn data-cy="overthought-post">
+
         <div className="flex flex-col space-y-8">
-          {post.feature_image && (
-            <FeaturedImage alt={post.title} loading="lazy" src={post.picture} />
+          {post.coverImage && (
+            <FeaturedImage alt={post.title}  src={`http://192.168.0.102:1337${post.coverImage.url}`} />
           )}
           <div className="flex flex-col space-y-4">
             <h1>{post.title}</h1>
-            <p className="p-small">Updated {format(post.updated_at)}</p>
+            <p className="p-small">Updated {format( post.updatedAt )}</p>
           </div>
         </div>
 

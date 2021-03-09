@@ -1,5 +1,5 @@
 import * as React from "react";
-import Page, { PageHeader } from "~/components/Page";
+import { PageHeader } from "~/components/Page";
 import { Post } from "~/graphql/types.generated";
 import BlogList from "~/components/Blog/List";
 import { CenteredColumn } from "~/components/CenteredColumn";
@@ -14,17 +14,15 @@ interface Props {
 function Blog({ posts, preview }: Props) {
   console.debug(posts, preview);
   return (
-    <Page data-cy="overthought">
-      <CenteredColumn>
-        <div className="flex flex-col space-y-14">
-          <PageHeader
-            title="My Blog!"
-            subtitle="The place where I practice my english..."
-          />
-          {posts && <BlogList posts={posts} />}
-        </div>
-      </CenteredColumn>
-    </Page>
+    <CenteredColumn>
+      <div className="flex flex-col space-y-14">
+        <PageHeader
+          title="My Blog!"
+          subtitle="The place where I practice my english..."
+        />
+        {posts && <BlogList posts={posts} />}
+      </div>
+    </CenteredColumn>
   );
 }
 

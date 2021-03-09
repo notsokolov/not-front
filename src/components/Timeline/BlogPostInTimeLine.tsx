@@ -11,7 +11,7 @@ interface Props {
   divider?: boolean;
 }
 
-export function BlogPost({
+export function BlogPostInTimeLine({
   slug,
   title,
   description,

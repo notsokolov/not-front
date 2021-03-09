@@ -1,56 +1,54 @@
-import * as React from "react";
-import { Post } from "~/graphql/types.generated";
-import Page from "~/components/Page";
-import PostContainer from "~/components/Blog/Post";
-import NotFound from "~/components/Blog/NotFound";
-import { getAllPosts } from "../api/api";
-// import { initApolloClient } from '~/graphql/services/apollo'
+import { useRouter } from "next/router";
+import ErrorPage from "next/error";
 
-interface Props {
-  slug: string;
-  post: Post;
-}
-export async function getStaticPaths({ preview = null }) {
-  const allPosts = (await getAllPosts(preview)) || [];
 
-  if (!allPosts) return { paths: [], fallback: true };
+import Layout from "@/components/layout";
+import markdownToHtml from "@/lib/markdownToHtml";
+import { getAllPostsWithSlug } from "@/lib/api";
 
-  const paths = allPosts.map(({ slug }) => ({
-    params: { slug },
-  }));
 
-  return { paths, fallback: true };
-}
 
-function MyPost({ allPosts, preview }: Props) {
-  const post = allPosts?.[3];
 
-  if (!post) return <NotFound />;
+// import {PostBody} from '../../components/Blog/PostBody'
+import { PostTitle } from "../../components/BlogPost/PostTitle";
+import { BlogPost } from "../../components/BlogPost";
 
+
+
+export default function Post({ post, preview }) {
+  const router = useRouter();
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
   return (
-    <Page>
-      <PostContainer post={post} />
-    </Page>
+    <Layout preview={preview}>
+      {router.isFallback ? (      <PostTitle title="zalupa" />      ) : (
+<BlogPost />
+      )}
+    </Layout>
   );
 }
 
-export async function getStaticProps({
-  params: { slug },
-  preview = false,
-}: {
-  params: { slug: any };
-  preview: boolean;
-}) {
-  const res = (await getAllPosts(preview)) || [];
-  const { post } = res;
+export async function getStaticProps({ params, preview = null }) {
+  const data = await getPostAndMorePosts(params.slug, preview);
+  const content = await markdownToHtml(data?.posts[0]?.content || "");
+
   return {
-    // because this data is slightly more dynamic, update it every hour
-    revalidate: 60 * 60,
     props: {
-      slug,
-      post,
+      preview,
+      post: {
+        ...data?.posts[0],
+        content,
+      },
+      morePosts: data?.morePosts,
     },
   };
 }
 
-export default MyPost;
+export async function getStaticPaths() {
+  const allPosts = await getAllPostsWithSlug();
+  return {
+    paths: allPosts?.map((post) => `/posts/${post.slug}`) || [],
+    fallback: true,
+  };
+}

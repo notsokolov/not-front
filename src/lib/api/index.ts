@@ -1,22 +1,22 @@
 async function fetchAPI(query, { variables } = {}) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/graphql`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       query,
       variables,
     }),
-  })
+  });
 
-  const json = await res.json()
+  const json = await res.json();
   if (json.errors) {
-    console.error(json.errors)
-    throw new Error('Failed to fetch API')
+    console.error(json.errors);
+    throw new Error("Failed to fetch API");
   }
 
-  return json.data
+  return json.data;
 }
 
 export async function getPreviewPostBySlug(slug) {
@@ -35,8 +35,8 @@ export async function getPreviewPostBySlug(slug) {
         },
       },
     }
-  )
-  return data?.posts[0]
+  );
+  return data?.posts[0];
 }
 
 export async function getAllPostsWithSlug() {
@@ -46,11 +46,11 @@ export async function getAllPostsWithSlug() {
         slug
       }
     }
-  `)
-  return data?.allPosts
+  `);
+  return data?.allPosts;
 }
 
-export async function getAllPostsForHome(preview) {
+export async function getAllPosts(preview) {
   const data = await fetchAPI(
     `
     query Posts($where: JSON){
@@ -74,12 +74,12 @@ export async function getAllPostsForHome(preview) {
     {
       variables: {
         where: {
-          ...(preview ? {} : { status: 'published' }),
+          ...(preview ? {} : { status: "published" }),
         },
       },
     }
-  )
-  return data?.posts
+  );
+  return data?.posts;
 }
 
 export async function getPostAndMorePosts(slug, preview) {
@@ -127,14 +127,14 @@ export async function getPostAndMorePosts(slug, preview) {
       variables: {
         where: {
           slug,
-          ...(preview ? {} : { status: 'published' }),
+          ...(preview ? {} : { status: "published" }),
         },
         where_ne: {
-          ...(preview ? {} : { status: 'published' }),
+          ...(preview ? {} : { status: "published" }),
           slug_ne: slug,
         },
       },
     }
-  )
-  return data
+  );
+  return data;
 }

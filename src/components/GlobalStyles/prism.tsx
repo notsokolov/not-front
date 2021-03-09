@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalPrismStyles = createGlobalStyle`
   code[class*="language-"],
@@ -70,6 +70,6 @@ const GlobalPrismStyles = createGlobalStyle`
   .token.entity {
     cursor: help;
   }
-`
+`;
 
-export default GlobalPrismStyles
+export default GlobalPrismStyles;

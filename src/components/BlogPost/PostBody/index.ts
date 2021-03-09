@@ -1,7 +1,7 @@
-import {markdownToHtml} from "../../../lib/markdownToHtml"
+import { markdownToHtml } from "../../../lib/markdownToHtml";
 
-function PostBody(content : string) {
-    return markdownToHtml(content);
+function PostBody(content: string) {
+  return markdownToHtml(content);
 }
 
-export default PostBody
+export default PostBody;

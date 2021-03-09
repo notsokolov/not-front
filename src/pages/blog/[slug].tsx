@@ -3,17 +3,15 @@ import { Post } from "~/graphql/types.generated";
 import Page from "~/components/Page";
 import PostContainer from "~/components/Blog/Post";
 import NotFound from "~/components/Blog/NotFound";
-import { getAllPostsForHome } from "../api/api";
+import { getAllPosts } from "../api/api";
 // import { initApolloClient } from '~/graphql/services/apollo'
 
-// interface Props {
-//   slug: string
-//   data: {
-//     post: Post
-//   }
-// }
+interface Props {
+  slug: string;
+  post: Post;
+}
 export async function getStaticPaths({ preview = null }) {
-  const allPosts = (await getAllPostsForHome(preview)) || [];
+  const allPosts = (await getAllPosts(preview)) || [];
 
   if (!allPosts) return { paths: [], fallback: true };
 
@@ -24,7 +22,7 @@ export async function getStaticPaths({ preview = null }) {
   return { paths, fallback: true };
 }
 
-function MyPost({ allPosts, preview }) {
+function MyPost({ allPosts, preview }: Props) {
   const post = allPosts?.[3];
 
   if (!post) return <NotFound />;
@@ -36,10 +34,22 @@ function MyPost({ allPosts, preview }) {
   );
 }
 
-export async function getStaticProps({ preview = null }) {
-  const allPosts = (await getAllPostsForHome(preview)) || [];
+export async function getStaticProps({
+  params: { slug },
+  preview = false,
+}: {
+  params: { slug: any };
+  preview: boolean;
+}) {
+  const res = (await getAllPosts(preview)) || [];
+  const { post } = res;
   return {
-    props: { allPosts, preview },
+    // because this data is slightly more dynamic, update it every hour
+    revalidate: 60 * 60,
+    props: {
+      slug,
+      post,
+    },
   };
 }
 

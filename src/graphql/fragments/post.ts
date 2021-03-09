@@ -3,11 +3,13 @@ import { gql } from "@apollo/client";
 export const PostInfoFragment = gql`
   fragment PostInfo on Post {
     id
+    _id
     title
     slug
-    updated_at
+    updatedAt
     excerpt
-    feature_image
-    html
+    coverImage {
+      url
+    }
   }
 `;

@@ -2,7 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import Page, { PageHeader } from "~/components/Page/index.tsx";
 import { CenteredColumn } from "~/components/CenteredColumn";
-// import { Timeline } from '~/components/Timeline'
+import { Timeline } from "~/components/Timeline";
 
 function Home() {
   return (
@@ -36,7 +36,7 @@ function Home() {
             </div>
           </div>
 
-          {/* <Timeline /> */}
+          <Timeline />
         </div>
       </CenteredColumn>
     </Page>

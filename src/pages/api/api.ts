@@ -18,7 +18,7 @@ async function fetchAPI(query, { variables } = {}) {
 
   return json.data;
 }
-export async function getAllPostsForHome(preview) {
+export async function getAllPosts(preview) {
   const data = await fetchAPI(
     `
       query Posts($where: JSON){
@@ -27,6 +27,7 @@ export async function getAllPostsForHome(preview) {
           slug
           excerpt
           date
+          updatedAt
           coverImage {
             url
           }

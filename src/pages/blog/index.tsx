@@ -1,44 +1,43 @@
 import * as React from "react";
 import Page, { PageHeader } from "~/components/Page";
-// import { Post } from "~/graphql/types.generated";
+import { Post } from "~/graphql/types.generated";
 import BlogList from "~/components/Blog/List";
 import { CenteredColumn } from "~/components/CenteredColumn";
-import { getAllPostsForHome } from "../api/api";
-import { GetStaticProps } from 'next'
+import { getAllPosts } from "../api/api";
+import { GetStaticProps } from "next";
 
+interface Props {
+  posts: Post[];
+  preview: boolean;
+}
 
-
-// interface Props {
-//   data: {
-//     posts: Post[];
-//   };
-// }
-
-function Blog({ allPosts, preview }: {allPosts: any, preview: any}) {
-  console.debug(allPosts, preview);
+function Blog({ posts, preview }: Props) {
+  console.debug(posts, preview);
   return (
     <Page data-cy="overthought">
       <CenteredColumn>
         <div className="flex flex-col space-y-14">
           <PageHeader
             title="My Blog!"
-            subtitle="Thinking out loud about design, development, and building
-              excellent software."
+            subtitle="The place where I practice my english..."
           />
-
-          {allPosts && allPosts.posts && <BlogList posts={allPosts.posts} />}
-          <BlogList posts={allPosts} />
+          {posts && <BlogList posts={posts} />}
         </div>
       </CenteredColumn>
     </Page>
   );
 }
 
-export const getStaticProps:GetStaticProps = async ({ preview = null }) => {
-  const allPosts = (await getAllPostsForHome(preview)) || [];
+export const getStaticProps: GetStaticProps = async ({ preview = null }) => {
+  const posts: any = (await getAllPosts(preview)) || [];
   return {
-    props: { allPosts, preview },
+    // because this data is slightly more dynamic, update it every hour
+    revalidate: 60 * 60,
+    props: {
+      posts,
+      preview,
+    },
   };
-}
+};
 
 export default Blog;

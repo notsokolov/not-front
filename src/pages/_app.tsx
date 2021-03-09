@@ -3,9 +3,15 @@ import type { AppProps /*, AppContext */ } from "next/app";
 import "~/styles/tailwind.css";
 import "~/styles/custom-styles.css";
 import "tailwindcss/utilities.css";
+import React from "react";
+import Page from "~/components/Page";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Page>
+      <Component {...pageProps} />
+    </Page>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for

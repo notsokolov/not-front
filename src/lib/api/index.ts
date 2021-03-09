@@ -1,3 +1,5 @@
+import { Slug } from "~/interfaces";
+
 async function fetchAPI(query, { variables } = {}) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/graphql`, {
     method: "POST",
@@ -19,7 +21,7 @@ async function fetchAPI(query, { variables } = {}) {
   return json.data;
 }
 
-export async function getPreviewPostBySlug(slug) {
+export async function getPreviewPostBySlug(slug: Slug) {
   const data = await fetchAPI(
     `
   query PostBySlug($where: JSON) {
@@ -50,7 +52,7 @@ export async function getAllPostsWithSlug() {
   return data?.allPosts;
 }
 
-export async function getAllPosts(preview) {
+export async function getAllPosts() {
   const data = await fetchAPI(
     `
     query Posts($where: JSON){
@@ -59,6 +61,7 @@ export async function getAllPosts(preview) {
         slug
         excerpt
         date
+        updatedAt
         coverImage {
           url
         }
@@ -74,7 +77,7 @@ export async function getAllPosts(preview) {
     {
       variables: {
         where: {
-          ...(preview ? {} : { status: "published" }),
+          ...{ status: "published" },
         },
       },
     }
@@ -82,7 +85,7 @@ export async function getAllPosts(preview) {
   return data?.posts;
 }
 
-export async function getPostAndMorePosts(slug, preview) {
+export async function getPostAndMorePosts(slug: Slug) {
   const data = await fetchAPI(
     `
   query PostBySlug($where: JSON, $where_ne: JSON) {
@@ -91,6 +94,7 @@ export async function getPostAndMorePosts(slug, preview) {
       slug
       content
       date
+      updatedAt
       ogImage: coverImage{
         url
       }
@@ -109,6 +113,7 @@ export async function getPostAndMorePosts(slug, preview) {
       title
       slug
       excerpt
+      updatedAt
       date
       coverImage {
         url
@@ -123,14 +128,13 @@ export async function getPostAndMorePosts(slug, preview) {
   }
   `,
     {
-      preview,
       variables: {
         where: {
           slug,
-          ...(preview ? {} : { status: "published" }),
+          ...{ status: "published" },
         },
         where_ne: {
-          ...(preview ? {} : { status: "published" }),
+          ...{ status: "published" },
           slug_ne: slug,
         },
       },

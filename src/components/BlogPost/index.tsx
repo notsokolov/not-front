@@ -1,28 +1,30 @@
 import * as React from "react";
-import { Post, UploadFile } from "~/graphql/types.generated";
+import { Post } from "~/graphql/types.generated";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { PostHeader } from "../../components/BlogPost/PostHeader";
 
 import Head from "next/head";
-import { PostBody } from "./PostBody";
+// import { PostBody } from "./PostBody";
+import MarkdownRenderer from "../MarkdownRenderer";
 
-export function BlogPost({ title, coverImage, updatedAt, content }: Post) {
-  return (
-    <React.Fragment>
-      <CenteredColumn data-cy="overthought-post">
-        <article>
-          <Head>
-            <title>{title}</title>
-            {/* <meta property="og:image" content={post.ogImage.url} /> */}
-          </Head>
-          <PostHeader
-            title={title}
-            coverImage={coverImage}
-            updatedAt={updatedAt}
-          />
-          <PostBody content={content} />
-        </article>
-      </CenteredColumn>
-    </React.Fragment>
-  );
+export function BlogPost({ post }: { post: Post }) {
+  if (post.content && post.title) {
+    return (
+      <React.Fragment>
+        <CenteredColumn data-cy="overthought-post">
+            <Head>
+              <title>{post.title}</title>
+            </Head>
+            <PostHeader
+              title={post.title}
+              coverImage={post.coverImage}
+              updatedAt={post.updatedAt}
+            />
+            <MarkdownRenderer>{ post.content }</MarkdownRenderer>
+        </CenteredColumn>
+      </React.Fragment>
+    );
+  } else {
+    return <h1>Content Lost...</h1>
+  }
 }

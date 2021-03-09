@@ -1,5 +1,7 @@
-import Query from "~/graphql/resolvers/queries";
+// import Query from "~/graphql/resolvers/queries";
 
-export default {
-  Query,
-};
+// export default {
+//   Query,
+// };
+
+export {};

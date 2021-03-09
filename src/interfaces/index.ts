@@ -8,3 +8,5 @@ export type User = {
   id: number;
   name: string;
 };
+
+export type Slug = string | null | undefined;

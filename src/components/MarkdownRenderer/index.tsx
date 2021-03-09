@@ -11,7 +11,7 @@ interface Props {
 }
 
 const parseHtml = htmlParser({
-  isValidNode: (node) => node.type !== "script",
+  isValidNode: (node: any) => node.type !== "script",
 });
 
 function LinkRenderer(props: any) {

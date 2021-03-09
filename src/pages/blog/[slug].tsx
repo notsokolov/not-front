@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 
-import { markdownToHtml } from "../../lib/markdownToHtml";
 import { getAllPostsWithSlug } from "../../../src/lib/api";
 
 // import {PostBody} from '../../components/Blog/PostBody'
@@ -11,29 +10,24 @@ import { CenteredColumn } from "~/components/CenteredColumn";
 import { getPostAndMorePosts } from "~/lib/api";
 import { Post } from "~/graphql/types.generated";
 
-export default function SinglePost({
-  post,
-  preview,
-}: {
-  post: Post;
-  preview: boolean;
-}) {
+export default function SinglePost({ post }: { post: Post }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return (
-      <CenteredColumn preview={preview}>
+      <CenteredColumn>
         <h1>Zalupa 1 </h1>
         <ErrorPage statusCode={404} />
       </CenteredColumn>
     );
   }
   return (
-    <CenteredColumn preview={preview}>
+    <CenteredColumn>
       {router.isFallback ? (
         <PostTitle title="Loading..." />
       ) : (
         // <p>{post.content}</p>
         <BlogPost post={post} />
+        // <PostTitle title="PSHEL NA HUY" />
       )}
     </CenteredColumn>
   );
@@ -46,8 +40,8 @@ export async function getStaticProps({
   params: any;
   preview: boolean;
 }) {
-  const data = await getPostAndMorePosts(params.slug, preview);
-  const content = await markdownToHtml(data?.posts[0]?.content || "");
+  const data = await getPostAndMorePosts(params.slug);
+  const content = data?.posts[0]?.content;
 
   return {
     props: {
@@ -56,7 +50,6 @@ export async function getStaticProps({
         ...data?.posts[0],
         content,
       },
-      morePosts: data?.morePosts,
     },
   };
 }

@@ -1,44 +1,43 @@
 import * as React from "react";
 import Page, { PageHeader } from "~/components/Page";
-import { Post } from "~/graphql/types.generated";
-import OverthoughtList from "~/components/Blog/List";
-import { GET_POSTS } from "~/graphql/queries";
-import { initApolloClient } from "~/graphql/services/apollo";
+// import { Post } from "~/graphql/types.generated";
+import BlogList from "~/components/Blog/List";
 import { CenteredColumn } from "~/components/CenteredColumn";
+import { getAllPostsForHome } from "../api/api";
+import { GetStaticProps } from 'next'
 
-interface Props {
-  data: {
-    posts: Post[];
-  };
-}
 
-function Blog({ data }: Props) {
+
+// interface Props {
+//   data: {
+//     posts: Post[];
+//   };
+// }
+
+function Blog({ allPosts, preview }: {allPosts: any, preview: any}) {
+  console.debug(allPosts, preview);
   return (
     <Page data-cy="overthought">
       <CenteredColumn>
         <div className="flex flex-col space-y-14">
           <PageHeader
-            title="Overthought"
+            title="My Blog!"
             subtitle="Thinking out loud about design, development, and building
               excellent software."
           />
 
-          {data && data.posts && <OverthoughtList posts={data.posts} />}
+          {allPosts && allPosts.posts && <BlogList posts={allPosts.posts} />}
+          <BlogList posts={allPosts} />
         </div>
       </CenteredColumn>
     </Page>
   );
 }
 
-export async function getStaticProps() {
-  const client = await initApolloClient({});
-  const { data } = await client.query({ query: GET_POSTS });
+export const getStaticProps:GetStaticProps = async ({ preview = null }) => {
+  const allPosts = (await getAllPostsForHome(preview)) || [];
   return {
-    // because this data is slightly more dynamic, update it every hour
-    revalidate: 60 * 60,
-    props: {
-      data,
-    },
+    props: { allPosts, preview },
   };
 }
 

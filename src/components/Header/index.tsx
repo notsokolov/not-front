@@ -18,47 +18,26 @@ interface Props {
 const NavLinks = ({ activeRoute }: Props) => {
   return (
     <React.Fragment>
-      <Label isActive={activeRoute === "Home"}>
+      <Label isActive={activeRoute == "Home"}>
         <Link href="/">
           <a>Home</a>
         </Link>
       </Label>
-
-      <Label isActive={activeRoute === "About"}>
+      <Label isActive={activeRoute == "About"}>
         <Link href="/about">
           <a>About</a>
         </Link>
       </Label>
-
-      <Label isActive={activeRoute === "Writing"}>
+      <Label isActive={activeRoute == "Writing"}>
         <Link href="/blog">
           <a>Blog</a>
         </Link>
       </Label>
-
-      <Label isActive={activeRoute === "App Dissection"}>
-        <Link href="/design-details">
-          <a>App Dissection</a>
-        </Link>
-      </Label>
-
-      <Label isActive={activeRoute === "Ask Me Anything"}>
-        <Link href="/ama">
-          <a>AMA</a>
-        </Link>
-      </Label>
-
-      <Label isActive={activeRoute === "Bookmarks"}>
+      <Label isActive={activeRoute == "Bookmarks"}>
         <Link href="/bookmarks">
           <a>Bookmarks</a>
         </Link>
       </Label>
-
-      {/* <Label isActive={activeRoute === 'Security Checklist'}>
-        <Link href="/security">
-          <a>Security Checklist</a>
-        </Link>
-      </Label> */}
     </React.Fragment>
   );
 };
@@ -69,7 +48,7 @@ export default function Header() {
 
   let activeRoute = "";
   let activePath = "";
-  if (router.pathname === "/") {
+  if (router.pathname == "/") {
     activeRoute = "Home";
     activePath = "/";
   }
@@ -81,25 +60,9 @@ export default function Header() {
     activeRoute = "Bookmarks";
     activePath = "/bookmarks";
   }
-  if (router.pathname.includes("/design-details")) {
-    activeRoute = "App Dissection";
-    activePath = "/design-details";
-  }
-  if (router.pathname.includes("/overthought")) {
-    activeRoute = "Writing";
-    activePath = "/overthought";
-  }
-  if (router.pathname.includes("/ama")) {
-    activeRoute = "Ask Me Anything";
-    activePath = "/ama";
-  }
-  if (router.pathname.includes("/hn")) {
-    activeRoute = "Hacker News";
-    activePath = "/hn";
-  }
-  if (router.pathname.includes("/security")) {
-    activeRoute = "Security Checklist";
-    activePath = "/security";
+  if (router.pathname.includes("/blog")) {
+    activeRoute = "Blog";
+    activePath = "/blog";
   }
 
   return (
@@ -146,7 +109,6 @@ export default function Header() {
           </React.Fragment>
         )}
       </MobileContainer>
-
       <Container data-cy="header">
         <InnerGrid>
           <NavLinks activeRoute={activeRoute} />

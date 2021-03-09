@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 
-import markdownToHtml from "../../lib/markdownToHtml";
-import { getAllPostsWithSlug } from "@/lib/api";
+import  { markdownToHtml } from "../../lib/markdownToHtml";
+import { getAllPostsWithSlug } from "../api";
 
 // import {PostBody} from '../../components/Blog/PostBody'
 import { PostTitle } from "../../components/BlogPost/PostTitle";
@@ -16,7 +16,7 @@ export default function Post({ post, preview }) {
   }
   return (
     <CenteredColumn preview={preview}>
-      {router.isFallback ? <PostTitle title="zalupa" /> : <BlogPost />}
+      {router.isFallback ? <PostTitle title="zalupa" /> : <BlogPost title="zalupa"   />}
     </CenteredColumn>
   );
 }
@@ -40,7 +40,7 @@ export async function getStaticProps({ params, preview = null }) {
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug();
   return {
-    paths: allPosts?.map((post) => `/posts/${post.slug}`) || [],
+    paths: allPosts?.map((post :any) => `/posts/${post.slug}`) || [],
     fallback: true,
   };
 }

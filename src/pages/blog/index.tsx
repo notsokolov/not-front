@@ -3,7 +3,7 @@ import { PageHeader } from "~/components/Page";
 import { Post } from "~/graphql/types.generated";
 import BlogList from "~/components/Blog/List";
 import { CenteredColumn } from "~/components/CenteredColumn";
-import { getAllPosts } from "../api/api";
+import { getAllPosts } from "../../lib/api";
 import { GetStaticProps } from "next";
 
 interface Props {
@@ -26,7 +26,7 @@ function Blog({ posts, preview }: Props) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ preview = null }) => {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const posts: any = (await getAllPosts(preview)) || [];
   return {
     // because this data is slightly more dynamic, update it every hour

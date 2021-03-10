@@ -3,11 +3,10 @@ import ErrorPage from "next/error";
 
 import { getAllPostsWithSlug } from "../../../src/lib/api";
 
-// import {PostBody} from '../../components/Blog/PostBody'
 import { PostTitle } from "../../components/BlogPost/PostTitle";
 import { BlogPost } from "../../components/BlogPost";
 import { CenteredColumn } from "~/components/CenteredColumn";
-import { getPostAndMorePosts } from "~/lib/api";
+import { getPosts } from "~/lib/api";
 import { Post } from "~/graphql/types.generated";
 
 export default function SinglePost({ post }: { post: Post }) {
@@ -15,7 +14,6 @@ export default function SinglePost({ post }: { post: Post }) {
   if (!router.isFallback && !post?.slug) {
     return (
       <CenteredColumn>
-        <h1>Zalupa 1 </h1>
         <ErrorPage statusCode={404} />
       </CenteredColumn>
     );
@@ -40,7 +38,7 @@ export async function getStaticProps({
   params: any;
   preview: boolean;
 }) {
-  const data = await getPostAndMorePosts(params.slug);
+  const data = await getPosts(params.slug);
   const content = data?.posts[0]?.content;
 
   return {
@@ -55,9 +53,9 @@ export async function getStaticProps({
 }
 
 export async function getStaticPaths() {
-  const allPosts = await getAllPostsWithSlug();
+  const data = await getAllPostsWithSlug();
   return {
-    paths: allPosts?.map((post: any) => `/blog/${post.slug}`) || [],
+    paths: data?.posts?.map((post: any) => `/blog/${post.slug}`) || [],
     fallback: true,
   };
 }

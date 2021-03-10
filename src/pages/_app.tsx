@@ -3,6 +3,11 @@ import type { AppProps /*, AppContext */ } from "next/app";
 import "~/styles/tailwind.css";
 import "~/styles/custom-styles.css";
 import "tailwindcss/utilities.css";
+import "../styles/stripe.css";
+// import "../styles/stripes.css";
+import "../styles/textStyles.css";
+import "../styles/pink.css";
+
 import React from "react";
 import Page from "~/components/Page";
 

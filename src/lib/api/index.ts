@@ -1,6 +1,6 @@
 import { Slug } from "~/interfaces";
 
-async function fetchAPI(query, { variables } = {}) {
+async function fetchAPI(query: any, { variables }: any = {}) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/graphql`, {
     method: "POST",
     headers: {
@@ -21,26 +21,6 @@ async function fetchAPI(query, { variables } = {}) {
   return json.data;
 }
 
-export async function getPreviewPostBySlug(slug: Slug) {
-  const data = await fetchAPI(
-    `
-  query PostBySlug($where: JSON) {
-    posts(where: $where) {
-      slug
-    }
-  }
-  `,
-    {
-      variables: {
-        where: {
-          slug,
-        },
-      },
-    }
-  );
-  return data?.posts[0];
-}
-
 export async function getAllPostsWithSlug() {
   const data = fetchAPI(`
     {
@@ -49,7 +29,7 @@ export async function getAllPostsWithSlug() {
       }
     }
   `);
-  return data?.allPosts;
+  return data;
 }
 
 export async function getAllPosts() {
@@ -85,7 +65,7 @@ export async function getAllPosts() {
   return data?.posts;
 }
 
-export async function getPostAndMorePosts(slug: Slug) {
+export async function getPosts(slug: Slug) {
   const data = await fetchAPI(
     `
   query PostBySlug($where: JSON, $where_ne: JSON) {

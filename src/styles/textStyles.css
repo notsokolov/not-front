@@ -1,0 +1,8 @@
+.intro {
+    margin: 0 auto;
+    padding: 290px 0 380px;
+    text-align: center;
+    will-change: transform;
+    z-index: 1;
+    position: relative;
+  }

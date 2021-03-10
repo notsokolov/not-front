@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PageHeader } from "~/components/Page";
+import { PageHeader } from "~/components/PageHeader";
 import { Post } from "~/graphql/types.generated";
 import BlogList from "~/components/Blog/List";
 import { CenteredColumn } from "~/components/CenteredColumn";

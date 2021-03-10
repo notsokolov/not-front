@@ -1,21 +1,43 @@
+import Link from "next/link";
 import React from "react";
+import { CenteredColumn } from "~/components/CenteredColumn";
+import { PageHeader } from "../PageHeader";
 
 export function StripeBG() {
   return (
     <header>
-      <section className="intro container-lg">
-        <h2>Turn your idea into a startup</h2>
-        <div>
-          <p>
-            Stripe Atlas is a powerful, safe, and easy-to-use platform for
-            forming a company. By removing lengthy paperwork, legal complexity,
-            and numerous fees, Stripe Atlas helps you launch your startup from
-            anywhere in the world.
-          </p>
+      <CenteredColumn>
+        <div className=" flex flex-col space-y-24">
+          <div className="intro flex flex-col space-y-8 md:items-center">
+            {/* <section className="intro container-lg"> */}
+            <PageHeader
+              title="Hey, I’m Bulochka!"
+              subtitle="I’m a product designer, podcaster, and writer, living in San
+              Francisco. I’m currently building native mobile apps at GitHub."
+            />
+            <div className="flex flex-col space-y-2 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:justify-center">
+              <Link href="/about" passHref>
+                <a>
+                  <button className="w-full text-lg btn btn-primary btn-large">
+                    More about me
+                  </button>
+                </a>
+              </Link>
+              <a
+                href="https://twitter.com/brian_lovin"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="w-full text-lg btn btn-large">
+                  Follow me on Twitter
+                </button>
+              </a>
+            </div>
+            {/* </section> */}
+          </div>
+          {/* <Timeline /> */}
         </div>
-        <a href="/#">Start your company</a>
-      </section>
-
+      </CenteredColumn>
       <div className="StripeGrid anchorBottom  ">
         <div className="backgroundContainer">
           <div className="grid">

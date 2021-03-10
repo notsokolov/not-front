@@ -42,7 +42,7 @@ const NavLinks = ({ activeRoute }: Props) => {
   );
 };
 
-export default function Header() {
+export function Header() {
   const [isExpanded, setExpanded] = React.useState(false);
   const router = useRouter();
 

@@ -10,7 +10,7 @@ interface Props {
   updatedAt: any;
 }
 
-export function PostHeader({ title, coverImage, updatedAt } : Props) {
+export function PostHeader({ title, coverImage, updatedAt }: Props) {
   return (
     <>
       <div className="flex flex-col space-y-8">

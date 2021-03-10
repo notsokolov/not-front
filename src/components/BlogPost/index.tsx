@@ -12,19 +12,19 @@ export function BlogPost({ post }: { post: Post }) {
     return (
       <React.Fragment>
         <CenteredColumn data-cy="overthought-post">
-            <Head>
-              <title>{post.title}</title>
-            </Head>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              updatedAt={post.updatedAt}
-            />
-            <MarkdownRenderer>{ post.content }</MarkdownRenderer>
+          <Head>
+            <title>{post.title}</title>
+          </Head>
+          <PostHeader
+            title={post.title}
+            coverImage={post.coverImage}
+            updatedAt={post.updatedAt}
+          />
+          <MarkdownRenderer>{post.content}</MarkdownRenderer>
         </CenteredColumn>
       </React.Fragment>
     );
   } else {
-    return <h1>Content Lost...</h1>
+    return <h1>Content Lost...</h1>;
   }
 }

@@ -9,13 +9,13 @@ import "../styles/textStyles.css";
 import "../styles/pink.css";
 
 import React from "react";
-import Page from "~/components/Page";
+import { Layout } from "~/components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Page>
+    <Layout>
       <Component {...pageProps} />
-    </Page>
+    </Layout>
   );
 }
 

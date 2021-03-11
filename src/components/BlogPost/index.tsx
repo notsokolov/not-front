@@ -20,7 +20,10 @@ export function BlogPost({ post }: { post: Post }) {
             coverImage={post.coverImage}
             updatedAt={post.updatedAt}
           />
-          <MarkdownRenderer>{post.content}</MarkdownRenderer>
+
+          <div className="mt-8">
+            <MarkdownRenderer>{post.content}</MarkdownRenderer>
+          </div>
         </CenteredColumn>
       </React.Fragment>
     );

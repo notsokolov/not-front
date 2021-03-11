@@ -11,18 +11,17 @@ export function StripeBG() {
           <div className="intro flex flex-col space-y-8 md:items-center">
             {/* <section className="intro container-lg"> */}
             <PageHeader
-              title="Hey, I’m Bulochka!"
-              subtitle="I’m a product designer, podcaster, and writer, living in San
-              Francisco. I’m currently building native mobile apps at GitHub."
+              title="🐙 Привет, я Алексей!"
+              subtitle="Я JavaScript-разработчик из Санкт-Петербурга. Делаю приложения на Node.js и для браузера."
             />
             <div className="flex flex-col space-y-2 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:justify-center">
-              <Link href="/about" passHref>
+              {/* <Link href="/about" passHref>
                 <a>
                   <button className="w-full text-lg btn btn-primary btn-large">
                     More about me
                   </button>
                 </a>
-              </Link>
+              </Link> */}
               <a
                 href="https://twitter.com/brian_lovin"
                 target="_blank"
@@ -41,7 +40,7 @@ export function StripeBG() {
       <div className="StripeGrid anchorBottom  ">
         <div className="backgroundContainer">
           <div className="grid">
-            <div className="background"></div>
+            <div className="background bg-primary"></div>
           </div>
         </div>
 

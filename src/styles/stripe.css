@@ -4,7 +4,7 @@ header {
 
 header .StripeGrid .backgroundContainer .background {
   grid-row: 1/-4;
-  background-color: #f0f3f7;
+  /* background-color: #f0f3f7; */
 }
 
 .StripeBackground {

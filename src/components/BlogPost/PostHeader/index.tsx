@@ -1,6 +1,7 @@
 import React from "react";
+import { LinkBack } from "../LinkBack";
 // import { Post, UploadFile } from "~/graphql/types.generated";
-import { PostImage } from "../PostImage";
+// import { PostImage } from "../PostImage";
 import { PostTitle } from "../PostTitle";
 import { UpdatedAt } from "../UpdatedAt";
 
@@ -13,15 +14,18 @@ interface Props {
 export function PostHeader({ title, coverImage, updatedAt }: Props) {
   return (
     <>
-      <div className="flex flex-col space-y-8">
-        {coverImage && (
+      <div className="flex flex-col space-y-4">
+        <LinkBack />
+        <PostTitle title={title} />
+        {/* {coverImage && (
           <PostImage
             alt={title}
             src={`http://192.168.0.102:1337${coverImage.url}`}
           />
-        )}
-        <PostTitle title={title} />
-        <UpdatedAt updatedAt={updatedAt} />
+        )} */}
+        <p className="p-small">
+          Updated <UpdatedAt updatedAt={updatedAt} />
+        </p>
       </div>
     </>
   );

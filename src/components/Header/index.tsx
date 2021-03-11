@@ -19,36 +19,24 @@ interface Props {
 const NavLinks = ({ activeRoute, setExpanded }: Props) => {
   return (
     <React.Fragment>
-      <Label
-        isActive={activeRoute == "Home"}
-        onClick={() => setExpanded(false)}
-      >
+      <Label isActive={activeRoute == "Home"}>
         <Link href="/">
-          <a>Home</a>
+          <a onClick={() => setExpanded(false)}>Home</a>
         </Link>
       </Label>
-      <Label
-        isActive={activeRoute == "About"}
-        onClick={() => setExpanded(false)}
-      >
+      <Label isActive={activeRoute == "About"}>
         <Link href="/about">
-          <a>About</a>
+          <a onClick={() => setExpanded(false)}>About</a>
         </Link>
       </Label>
-      <Label
-        isActive={activeRoute == "Blog"}
-        onClick={() => setExpanded(false)}
-      >
+      <Label isActive={activeRoute == "Blog"}>
         <Link href="/blog">
-          <a>Blog</a>
+          <a onClick={() => setExpanded(false)}>Blog</a>
         </Link>
       </Label>
-      <Label
-        isActive={activeRoute == "Bookmarks"}
-        onClick={() => setExpanded(false)}
-      >
+      <Label isActive={activeRoute == "Bookmarks"}>
         <Link href="/Bookmarks">
-          <a>Bookmarks</a>
+          <a onClick={() => setExpanded(false)}>Bookmarks</a>
         </Link>
       </Label>
     </React.Fragment>

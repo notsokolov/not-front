@@ -13,28 +13,41 @@ import {
 
 interface Props {
   activeRoute: string;
+  setExpanded: any;
 }
 
-const NavLinks = ({ activeRoute }: Props) => {
+const NavLinks = ({ activeRoute, setExpanded }: Props) => {
   return (
     <React.Fragment>
-      <Label isActive={activeRoute == "Home"}>
+      <Label
+        isActive={activeRoute == "Home"}
+        onClick={() => setExpanded(false)}
+      >
         <Link href="/">
           <a>Home</a>
         </Link>
       </Label>
-      <Label isActive={activeRoute == "About"}>
+      <Label
+        isActive={activeRoute == "About"}
+        onClick={() => setExpanded(false)}
+      >
         <Link href="/about">
           <a>About</a>
         </Link>
       </Label>
-      <Label isActive={activeRoute == "Writing"}>
+      <Label
+        isActive={activeRoute == "Blog"}
+        onClick={() => setExpanded(false)}
+      >
         <Link href="/blog">
           <a>Blog</a>
         </Link>
       </Label>
-      <Label isActive={activeRoute == "Bookmarks"}>
-        <Link href="/bookmarks">
+      <Label
+        isActive={activeRoute == "Bookmarks"}
+        onClick={() => setExpanded(false)}
+      >
+        <Link href="/Bookmarks">
           <a>Bookmarks</a>
         </Link>
       </Label>
@@ -78,7 +91,7 @@ export function Header() {
             >
               ×
             </CloseButton>
-            <NavLinks activeRoute={activeRoute} />
+            <NavLinks activeRoute={activeRoute} setExpanded={setExpanded} />
           </React.Fragment>
         ) : (
           <React.Fragment>
@@ -111,7 +124,7 @@ export function Header() {
       </MobileContainer>
       <Container data-cy="header">
         <InnerGrid>
-          <NavLinks activeRoute={activeRoute} />
+          <NavLinks activeRoute={activeRoute} setExpanded={setExpanded} />
         </InnerGrid>
         <Background className="bg-white bg-opacity-60 dark:bg-gray-900" />
       </Container>

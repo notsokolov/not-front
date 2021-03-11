@@ -16,13 +16,21 @@ export function Footer() {
           </Link>
         </div>
         <div className="flex flex-col space-y-4">
+          <Link href="/blog" as="/blog" passHref>
+            <a className="black-link">Blog</a>
+          </Link>
+          <Link href="/bookmarks" as="/bookmarks" passHref>
+            <a className="black-link">Bookmarks</a>
+          </Link>
+        </div>
+        <div className="flex flex-col space-y-4">
           <a
             href="https://twitter.com/alexqlur"
             target="_blank"
             rel="noopener noreferrer"
             className="black-link"
           >
-            twitter
+            @twitter
           </a>
           <a
             href="https://instagram.com/alexqlur"
@@ -30,16 +38,8 @@ export function Footer() {
             rel="noopener noreferrer"
             className="black-link"
           >
-            instagram
+            @instagram
           </a>
-        </div>
-        <div className="flex flex-col space-y-4">
-          <Link href="/blog" as="/blog" passHref>
-            <a className="black-link">Blog</a>
-          </Link>
-          <Link href="/bookmarks" as="/bookmarks" passHref>
-            <a className="black-link">Bookmarks</a>
-          </Link>
         </div>
       </div>
     </CenteredColumn>

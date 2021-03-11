@@ -9,19 +9,17 @@ interface Props {
 
 export default function BlogList({ posts }: Props) {
   if (!posts || posts.length === 0) return null;
-  // console.debug("Running BlogList");
+  console.debug(posts.map((post) => post.id));
   return (
     <div className="flex flex-col space-y-5">
       {posts.map((post) => (
-        <>
-          <div className="flex flex-col space-y-1" key={post.id}>
-            <Link href="/blog/[slug]" as={`/blog/${post.slug}`} passHref>
-              <a className="text-blue-600 dark:text-blue-500">{post.title}</a>
-            </Link>
-            {post.excerpt && <p className="clamp-2">{post.excerpt}</p>}
-            <p className="p-small">Updated {format(post.updatedAt)}</p>
-          </div>
-        </>
+        <div className="flex flex-col space-y-1" key={post.id}>
+          <Link href="/blog/[slug]" as={`/blog/${post.slug}`} passHref>
+            <a className="text-blue-600 dark:text-blue-500">{post.title}</a>
+          </Link>
+          {post.excerpt && <p className="clamp-2">{post.excerpt}</p>}
+          <p className="p-small">Updated {format(post.updatedAt)}</p>
+        </div>
       ))}
     </div>
   );

@@ -37,6 +37,7 @@ export async function getAllPosts() {
     `
     query Posts($where: JSON){
       posts(sort: "date:desc", limit: 10, where: $where) {
+        id
         title
         slug
         excerpt
@@ -70,6 +71,7 @@ export async function getPosts(slug: Slug) {
     `
   query PostBySlug($where: JSON, $where_ne: JSON) {
     posts(where: $where) {
+      id
       title
       slug
       content

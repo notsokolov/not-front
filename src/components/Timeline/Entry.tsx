@@ -1,4 +1,5 @@
 import * as React from "react";
+// import { getTint } from "./getTint";
 
 interface TimelineEntryProps {
   children?: React.ReactChild | React.ReactChild[];

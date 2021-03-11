@@ -6,13 +6,13 @@ import { TimelineEntry } from "./Entry";
 export function Timeline() {
   return (
     <div className="flex flex-col w-full timeline-container">
-      <Year2020 />
       <TimelineEntry
         title="Work in progress..."
         timestamp="More timeline entries coming soon"
         Icon={Coffee}
         divider={false}
       />
+      <Year2020 />
     </div>
   );
 }

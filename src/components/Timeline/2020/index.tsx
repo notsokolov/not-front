@@ -6,7 +6,7 @@ export function Year2020() {
   return (
     <>
       <November />
-      <October />
+      {/* <October /> */}
     </>
   );
 }

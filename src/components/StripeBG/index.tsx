@@ -15,13 +15,13 @@ export function StripeBG() {
               subtitle="Я JavaScript-разработчик из Санкт-Петербурга. Делаю приложения на Node.js и для браузера."
             />
             <div className="flex flex-col space-y-2 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:justify-center">
-              {/* <Link href="/about" passHref>
+              <Link href="/about" passHref>
                 <a>
                   <button className="w-full text-lg btn btn-primary btn-large">
                     More about me
                   </button>
                 </a>
-              </Link> */}
+              </Link>
               <a
                 href="https://twitter.com/brian_lovin"
                 target="_blank"

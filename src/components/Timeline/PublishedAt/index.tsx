@@ -6,6 +6,6 @@ import ru from "timeago.js/lib/lang/ru";
 
 timeago.register("ru", ru);
 
-export function UpdatedAt({ updatedAt }: { updatedAt: TDate }) {
+export function PublishedAt({ updatedAt }: { updatedAt: TDate }) {
   return <TimeAgo datetime={updatedAt} locale="ru" />;
 }

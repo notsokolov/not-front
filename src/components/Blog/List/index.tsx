@@ -1,5 +1,5 @@
 import * as React from "react";
-import { format } from "timeago.js";
+// import { format } from "timeago.js";
 import { Post } from "~/graphql/types.generated";
 import Link from "next/link";
 import { UpdatedAt } from "../../BlogPost/UpdatedAt";

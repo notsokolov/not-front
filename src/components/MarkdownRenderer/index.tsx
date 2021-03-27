@@ -33,7 +33,7 @@ function LinkRenderer(props: any) {
   );
 }
 
-export default function MarkdownRenderer(props: Props) {
+export function MarkdownRenderer(props: Props) {
   const { children, ...rest } = props;
 
   React.useEffect(() => {

@@ -1,11 +1,11 @@
 import * as React from "react";
-import { getTint } from "./getTint";
+import { getTint } from "../../../lib/getTint";
 
-export interface TimelineEntryProps {
+interface TimelineEntryProps {
   children?: React.ReactChild | React.ReactChild[];
   title: string;
-  timestamp?: string;
-  Icon: React.ReactType;
+  published_at: string;
+  Icon: React.ElementType;
   tint?: string;
   divider?: boolean;
 }
@@ -13,13 +13,13 @@ export interface TimelineEntryProps {
 export function TimelineEntry({
   children = null,
   title,
-  timestamp,
+  published_at,
   Icon,
   tint = "gray",
   divider = true,
 }: TimelineEntryProps) {
   return (
-    <div className="flex mb-12 md:mb-12 timeline-item">
+    <div className="flex mb-12 md:mb-12">
       <div className="flex flex-col items-center">
         <div
           className={`flex justify-center p-3 rounded-full align-center border-4 border-gray-50 dark:border-gray-1000 ${getTint(
@@ -36,8 +36,8 @@ export function TimelineEntry({
       <div className="flex flex-col flex-1 ml-4 space-y-4">
         <div className="flex flex-col pt-1 contents-center">
           <span className="font-medium text-primary">{title}</span>
-          {timestamp && (
-            <span className="text-sm text-tertiary">{timestamp}</span>
+          {published_at && (
+            <span className="text-sm text-tertiary">{published_at}</span>
           )}
         </div>
         <div className="flex flex-col space-y-4 timeline-full-width">

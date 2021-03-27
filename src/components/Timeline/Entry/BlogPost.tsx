@@ -1,29 +1,29 @@
 import * as React from "react";
 import Link from "next/link";
-import { TimelineEntry } from "./Entry";
+import { TimelineEntry } from ".";
 import { Edit2 } from "react-feather";
 
 interface Props {
   slug: string;
   title: string;
-  description: string;
-  timestamp: string;
+  excerpt: string;
+  published_at: string;
   divider?: boolean;
 }
 
 export function BlogPost({
   slug,
   title,
-  description,
-  timestamp,
+  excerpt,
+  published_at,
   divider = true,
 }: Props) {
   return (
     <TimelineEntry
-      title="Published new post"
+      title="Blog Post"
       tint="green"
       Icon={Edit2}
-      timestamp={timestamp}
+      published_at={published_at}
       divider={divider}
     >
       <Link passHref href={`/overthought/${slug}`}>
@@ -31,7 +31,7 @@ export function BlogPost({
           <div className="flex flex-col space-y-4">
             <div className="flex flex-col space-y-1">
               <p className="font-semibold">{title}</p>
-              <p className="font-normal text-tertiary">{description}</p>
+              <p className="font-normal text-tertiary">{excerpt}</p>
             </div>
           </div>
         </a>

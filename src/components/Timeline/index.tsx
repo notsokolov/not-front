@@ -1,17 +1,18 @@
 import * as React from "react";
-import { Coffee } from "react-feather";
+import { BatteryCharging } from "react-feather";
 import { Year2020 } from "./2020";
 import { TimelineEntry } from "./Entry";
 
 export function Timeline() {
   return (
     <div className="flex flex-col w-full timeline-container">
-      <TimelineEntry
+      {/* <TimelineEntry
         title="Work in progress..."
-        timestamp="More timeline entries coming soon"
-        Icon={Coffee}
+        published_at="More timeline entries coming soon"
+        Icon={BatteryCharging}
+        tint="yellow"
         divider={false}
-      />
+      /> */}
       <Year2020 />
     </div>
   );

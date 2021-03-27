@@ -5,7 +5,7 @@ import { PostHeader } from "../../components/BlogPost/PostHeader";
 
 import Head from "next/head";
 // import { PostBody } from "./PostBody";
-import MarkdownRenderer from "../MarkdownRenderer";
+import { MarkdownRenderer } from "../MarkdownRenderer";
 
 export function BlogPost({ post }: { post: Post }) {
   if (post.content && post.title) {

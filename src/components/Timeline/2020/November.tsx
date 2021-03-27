@@ -2,8 +2,8 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GitCommit, GitMerge, Zap, Wind, Twitter, Camera } from "react-feather";
-import { ButtonSet, DateEntry, Notes, TimelineEntry } from "../Entry";
-import { BlogPost } from "../BlogPost";
+import { TimelineEntry, Notes, DateEntry, ButtonSet } from "../Entry";
+import { BlogPost } from "../Entry/BlogPost";
 
 export function November() {
   return (

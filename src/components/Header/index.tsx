@@ -34,11 +34,11 @@ const NavLinks = ({ activeRoute, setExpanded }: Props) => {
           <a onClick={() => setExpanded(false)}>Blog</a>
         </Link>
       </Label>
-      <Label isActive={activeRoute == "Bookmarks"}>
+      {/* <Label isActive={activeRoute == "Bookmarks"}>
         <Link href="/Bookmarks">
-          <a onClick={() => setExpanded(false)}>Bookmarks</a>
+          <a onClick={() => setExpanded(false)}>Закладки</a>
         </Link>
-      </Label>
+      </Label> */}
     </React.Fragment>
   );
 };

@@ -61,7 +61,14 @@ header .StripeGrid .backgroundContainer .background {
   bottom: 0;
   z-index: -1;
   pointer-events: none;
-  margin: -1rem;
+  margin: auto -1rem;
+}
+
+@media (min-width: 1000px) {
+  .StripeGrid {
+    width: 100%;
+    margin: auto;
+  }
 }
 
 @media (min-width: 670px) {

@@ -21,12 +21,12 @@ export function BlogPost({
   return (
     <TimelineEntry
       title="Blog Post"
-      tint="green"
+      // tint="yellow"
       Icon={Edit2}
       published_at={published_at}
       divider={divider}
     >
-      <Link passHref href={`/overthought/${slug}`}>
+      <Link passHref href={`/blog/${slug}`}>
         <a className="px-4 py-3 transition-shadow bg-white rounded-md shadow dark:bg-gray-900 hover:shadow-cardHover">
           <div className="flex flex-col space-y-4">
             <div className="flex flex-col space-y-1">

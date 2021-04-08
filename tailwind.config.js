@@ -1,5 +1,7 @@
 const colors = require("tailwindcss/colors");
 
+// console.debug(colors.blue);
+
 module.exports = {
   purge: ["./src/**/*.tsx"],
   darkMode: "media", // 'media' or 'class'
@@ -7,13 +9,26 @@ module.exports = {
     colors: {
       yellow: colors.yellow,
       purple: colors.purple,
-      blue: colors.blue,
+      blue: {
+        'zalupa': "#f8f9ff",
+        '50': '#eff6ff',
+        '100': '#dbeafe',
+        '200': '#bfdbfe',
+        '300': '#7c90fd',
+        '400': '#6077fa',
+        '500': '#445ff8',
+        '600': '#3754f7',
+        '700': '#1d4ed8',
+        '800': '#1e40af',
+        '900': '#1e3a8a'
+      },      
       gray: colors.gray,
       red: colors.red,
       green: colors.green,
       pink: colors.pink,
       indigo: colors.indigo,
       white: "#fff",
+
     },
     lineClamp: {
       1: 1,

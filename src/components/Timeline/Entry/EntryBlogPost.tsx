@@ -7,23 +7,23 @@ interface Props {
   slug: string;
   title: string;
   excerpt: string;
-  published_at: string;
+  date: string;
   divider?: boolean;
 }
 
-export function BlogPost({
+export function EntryBlogPost({
   slug,
   title,
   excerpt,
-  published_at,
+  date,
   divider = true,
 }: Props) {
   return (
     <TimelineEntry
-      title="Blog Post"
-      // tint="yellow"
+      title="Пост в блоге"
+      color="blue"
       Icon={Edit2}
-      published_at={published_at}
+      date={date}
       divider={divider}
     >
       <Link passHref href={`/blog/${slug}`}>

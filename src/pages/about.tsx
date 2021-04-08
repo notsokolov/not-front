@@ -1,26 +1,33 @@
 import * as React from "react";
 import Image from "next/image";
 import { CenteredColumn } from "~/components/CenteredColumn";
+import { GetStaticProps } from "next";
+import { getAboutContent } from "~/lib/api";
+import { MarkdownRenderer } from "~/components/MarkdownRenderer";
 
-function About() {
+function About({ about }) {
+  console.log(about);
+  const imageURL = `http://192.168.0.103:1337${about.picture.url}`;
   return (
     <CenteredColumn>
       <div className="flex flex-col space-y-12" data-cy="about-page">
         <div className="-mx-4 -mt-24 md:mt-0 md:-mx-8 ">
-          <Image
-            src="https://pbs.twimg.com/profile_images/288025495/MET-ART_vol_56_0003.jpg"
+          {/* <Image
+            src={imageURL}
             alt={"A photo of me"}
-            layout="responsive"
-            width="500px"
-            height="750px"
+            layout="fixed"
+            width="100%"
+            height="auto"
             className="md:rounded-lg"
-          />
+          /> */}
         </div>
         <div className="flex flex-col space-y-12">
           <div className="flex flex-col prose lg:prose-lg">
-            <p>
-              👋 I’m a product designer, podcaster, and writer, currently living
-              in San Francisco.
+            <MarkdownRenderer>{about.content}</MarkdownRenderer>
+
+            {/* <p>
+              👋 Я FrontEnd-разработчик. </p>
+              <p>В работе использую JavaScript и TypeScript. React.js и Next.js — мои основные фронтенд-фрейморки.
             </p>
             <p>
               Right now I’m designing{" "}
@@ -123,12 +130,24 @@ function About() {
                   @rxnjmmt
                 </a>
               </em>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
     </CenteredColumn>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const about: any = (await getAboutContent()) || [];
+  console.debug(about);
+
+  return {
+    // because this data is slightly more dynamic, update it every hour
+    props: {
+      about,
+    },
+  };
+};
 
 export default About;

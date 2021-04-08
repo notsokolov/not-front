@@ -45,7 +45,7 @@ export function MarkdownRenderer(props: Props) {
       <GlobalStyles.PrismStyles />
       <Markdown
         {...rest}
-        className="prose lg:prose-lg"
+        className="prose md:prose-md"
         astPlugins={[parseHtml]}
         renderers={{
           link: LinkRenderer,

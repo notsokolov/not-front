@@ -6,7 +6,7 @@ export function LinkBack() {
     <div className="mb-1">
       <Link href="/blog">
         <a className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
-          ‹‹ Back to blog!
+          ‹‹ Назад к блогу
         </a>
       </Link>
     </div>

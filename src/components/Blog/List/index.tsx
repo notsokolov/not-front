@@ -21,7 +21,7 @@ export default function BlogList({ posts }: Props) {
           {post.excerpt && <p className="clamp-2">{post.excerpt}</p>}
 
           <p className="p-small">
-            Updated <UpdatedAt updatedAt={post.updatedAt} />
+            Обновлено <UpdatedAt updatedAt={post.updatedAt} />
           </p>
         </div>
       ))}

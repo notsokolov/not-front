@@ -3,7 +3,7 @@ import Link from "next/link";
 // import Image from "next/image";
 import * as Icon from "react-feather";
 import { TimelineEntry, Notes, EntriesForMonth, ButtonSet } from "../Entry";
-import { BlogPost } from "../Entry/BlogPost";
+import { EntryBlogPost } from "../Entry/EntryBlogPost";
 
 export function MyShit() {
   return (
@@ -12,12 +12,12 @@ export function MyShit() {
 
       <TimelineEntry
         title="Added new bookmark types"
-        published_at="November 28, 2020"
+        date="November 28, 2020"
         Icon={Icon.GitCommit}
       >
-        <Notes content="asdfasdf" />
+        <Notes content="Большая часть текста сделана из разделов 1.10.32–3 книги Цицерона «На грани Добра и Зла» («De finibus bonorum et malorum»). Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit является первой известной человечеству версией («Больше нет никого из тех, кто любит скорбь, поскольку это горе и поэтому хочет заполучить это»). " />
 
-        <ButtonSet>
+        {/* <ButtonSet>
           <Link passHref href="/bookmarks">
             <a className="w-full md:w-auto">
               <button className="w-full md:w-auto btn">
@@ -38,11 +38,11 @@ export function MyShit() {
               </>
             </button>
           </a>
-        </ButtonSet>
+        </ButtonSet> */}
       </TimelineEntry>
 
-      <BlogPost
-        published_at="November 29, 2020"
+      <EntryBlogPost
+        date="November 29, 2020"
         slug="tailwind-css-first-impressions"
         title="Tailwind CSS First Impressions"
         excerpt="My pros and cons for the Tailwind CSS framework after one week. My pros and cons for the Tailwind CSS framework after one week. My pros and cons for the Tailwind CSS framework after one week."

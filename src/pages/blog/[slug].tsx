@@ -21,7 +21,7 @@ export default function SinglePost({ post }: { post: Post }) {
   return (
     <CenteredColumn>
       {router.isFallback ? (
-        <PostTitle title="Loading..." />
+        <PostTitle title="Загрузга..." />
       ) : (
         // <p>{post.content}</p>
         <BlogPost post={post} />

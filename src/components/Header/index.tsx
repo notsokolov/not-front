@@ -21,17 +21,17 @@ const NavLinks = ({ activeRoute, setExpanded }: Props) => {
     <React.Fragment>
       <Label isActive={activeRoute == "Home"}>
         <Link href="/">
-          <a onClick={() => setExpanded(false)}>Home</a>
+          <a onClick={() => setExpanded(false)}>Главная</a>
         </Link>
       </Label>
       <Label isActive={activeRoute == "About"}>
         <Link href="/about">
-          <a onClick={() => setExpanded(false)}>About</a>
+          <a onClick={() => setExpanded(false)}>Эбаут</a>
         </Link>
       </Label>
       <Label isActive={activeRoute == "Blog"}>
         <Link href="/blog">
-          <a onClick={() => setExpanded(false)}>Blog</a>
+          <a onClick={() => setExpanded(false)}>Блог</a>
         </Link>
       </Label>
       {/* <Label isActive={activeRoute == "Bookmarks"}>

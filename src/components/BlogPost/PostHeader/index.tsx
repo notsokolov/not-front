@@ -15,7 +15,7 @@ export function PostHeader({ title, coverImage, updatedAt }: Props) {
   return (
     <>
       <div className="flex flex-col space-y-4">
-        <LinkBack />
+        {/* <LinkBack /> */}
         <PostTitle title={title} />
         {/* {coverImage && (
           <PostImage
@@ -24,7 +24,7 @@ export function PostHeader({ title, coverImage, updatedAt }: Props) {
           />
         )} */}
         <p className="p-small">
-          Updated <UpdatedAt updatedAt={updatedAt} />
+          Обновлено <UpdatedAt updatedAt={updatedAt} />
         </p>
       </div>
     </>

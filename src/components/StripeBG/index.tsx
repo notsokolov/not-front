@@ -12,13 +12,13 @@ export function StripeBG() {
             {/* <section className="intro container-lg"> */}
             <PageHeader
               title="🐙 Привет, я Алексей!"
-              subtitle="Я JavaScript-разработчик из Санкт-Петербурга. Делаю приложения на Node.js и для браузера."
+              subtitle="JavaScript-разработчик из Санкт-Петербурга. Делаю приложения на Node.js и для браузера."
             />
             <div className="flex flex-col space-y-2 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:justify-center">
               <Link href="/about" passHref>
                 <a>
                   <button className="w-full text-lg btn btn-primary btn-large">
-                    More about me
+                    Мое Резюме
                   </button>
                 </a>
               </Link>
@@ -28,7 +28,7 @@ export function StripeBG() {
                 rel="noopener noreferrer"
               >
                 <button className="w-full text-lg btn btn-large">
-                  Follow me on Twitter
+                  Связаться со Мной
                 </button>
               </a>
             </div>

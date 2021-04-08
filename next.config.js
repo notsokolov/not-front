@@ -7,7 +7,7 @@ const withSourceMaps = require("@zeit/next-source-maps");
 
 module.exports = withSourceMaps({
   images: {
-    domains: ["pbs.twimg.com"],
+    domains: ["pbs.twimg.com", "192.168.0.103"],
   },
   env: {},
   webpack: (config, { isServer }) => {

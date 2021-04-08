@@ -1,7 +1,7 @@
 /* Write your own custom base styles here */
 
 html {
-  @apply text-base bg-gray-50 dark:bg-gray-1000;
+  @apply text-base  bg-gray-50 dark:bg-gray-900;
 }
 
 /* Write your own custom component styles here */
@@ -46,7 +46,7 @@ html {
   }
 
   .btn-primary {
-    @apply text-white bg-yellow-400 border-none hover:bg-yellow-500 dark:hover:bg-yellow-300;
+    @apply text-white bg-blue-400 border-none hover:bg-blue-500 dark:hover:bg-blue-300;
   }
 
   .btn-outline {
@@ -109,11 +109,11 @@ html {
   }
 
   .nav-label a {
-    @apply text-gray-1000 dark:text-gray-50 hover:text-yellow-500 dark:hover:text-yellow-300 hover:bg-yellow-500 hover:bg-opacity-10;
+    @apply text-gray-1000 dark:text-gray-50 hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-500 hover:bg-opacity-10;
   }
 
   .nav-label.active a {
-    @apply text-yellow-500 bg-yellow-500 dark:text-yellow-300 bg-opacity-10;
+    @apply text-blue-500 bg-blue-500 dark:text-blue-300 bg-opacity-10;
   }
 
   .prose blockquote {
@@ -121,7 +121,7 @@ html {
   }
 
   .prose a {
-    @apply dark:text-yellow-500;
+    @apply dark:text-blue-500;
   }
 
   /* the kg-embed-card gets applied to iframes sent from Ghost. this preserves a good video aspect ratio */
@@ -197,24 +197,24 @@ html {
   .token.url,
   .language-css .token.string,
   .style .token.string {
-    @apply text-yellow-500;
+    @apply text-blue-500;
   }
 
   .token.atrule,
   .token.attr-value,
   .token.keyword {
-    @apply text-yellow-500;
+    @apply text-blue-500;
   }
 
   .token.function,
   .token.class-name {
-    @apply text-yellow-500;
+    @apply text-blue-500;
   }
 
   .token.regex,
   .token.important,
   .token.variable {
-    @apply text-yellow-500;
+    @apply text-blue-500;
   }
 
   code[class*="language-"],

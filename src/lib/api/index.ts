@@ -124,3 +124,19 @@ export async function getPosts(slug: Slug) {
   );
   return data;
 }
+
+export async function getAboutContent() {
+  const data = await fetchAPI(
+    `
+    query {
+      about {
+        content
+        picture{
+          url
+        }
+      }
+    }
+  `
+  );
+  return data?.about;
+}

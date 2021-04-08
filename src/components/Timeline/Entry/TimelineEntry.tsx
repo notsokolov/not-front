@@ -4,8 +4,8 @@ import { TimeLineEntryIcon } from "./TimeLineEntryIcon";
 
 interface TimelineEntryProps {
   children?: React.ReactChild | React.ReactChild[];
-  title: string;
-  published_at: string;
+  title?: string;
+  date: string;
   Icon: any; //React.ElementType;
   color?: string;
   divider?: boolean;
@@ -14,7 +14,7 @@ interface TimelineEntryProps {
 export function TimelineEntry({
   children = null,
   title,
-  published_at,
+  date,
   Icon,
   color = "gray",
   divider = true,
@@ -22,7 +22,7 @@ export function TimelineEntry({
   return (
     <div className="flex mb-12 md:mb-12">
       <TimeLineEntryIcon Icon={Icon} color={color} divider={divider} />
-      <TimeLineEntryContent title={title} published_at={published_at}>
+      <TimeLineEntryContent title={title} date={date}>
         {children}
       </TimeLineEntryContent>
     </div>

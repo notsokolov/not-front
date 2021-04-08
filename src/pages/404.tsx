@@ -5,7 +5,7 @@ import { CenteredColumn } from "~/components/CenteredColumn";
 export default function Error() {
   return (
     <CenteredColumn>
-      <h1>Page Not Found: Error 404</h1>
+      <h1>Страница Не Найдена: Ошибка 404</h1>
     </CenteredColumn>
   );
 }

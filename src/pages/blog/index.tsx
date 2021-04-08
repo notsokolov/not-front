@@ -15,8 +15,8 @@ function Blog({ posts }: Props) {
     <CenteredColumn>
       <div className="flex flex-col space-y-14">
         <PageHeader
-          title="My Blog!"
-          subtitle="The place where I practice my english..."
+          title="Блог"
+          subtitle="Пишу о разработке по-философски...😆"
         />
         {posts && <BlogList posts={posts} />}
       </div>

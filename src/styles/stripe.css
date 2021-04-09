@@ -39,7 +39,7 @@ header .StripeGrid .backgroundContainer .background {
   transform: skew(0, 12deg);
 }
 
-/* .StripeGrid {
+.StripeGrid {
   --stripe-height: 48px;
   --content-columns: 12;
   --gutter-columns: 4;
@@ -49,20 +49,9 @@ header .StripeGrid .backgroundContainer .background {
   bottom: 0;
   z-index: -1;
   pointer-events: none;
-} */
-
-.StripeGrid {
-  --stripe-height: 48px;
-  --content-columns: 12;
-  --gutter-columns: 4;
-  position: absolute;
-  width: calc(100% + 2rem);
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  pointer-events: none;
-  margin: auto -1rem;
 }
+
+
 
 @media (min-width: 1000px) {
   .StripeGrid {

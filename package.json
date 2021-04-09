@@ -14,11 +14,14 @@
     "postinstall": "yarn generate"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.11",
+    "@apollo/link-error": "^2.0.0-beta.3",
     "@next/bundle-analyzer": "^10.0.8",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.4.0",
     "@tippy.js/react": "^3.1.1",
     "@zeit/next-source-maps": "^0.0.3",
+    "apollo-server-micro": "^2.21.0",
     "cookie": "^0.4.1",
     "graphql": "^15.5.0",
     "graphql-tools-fork": "^9.0.1",
@@ -73,7 +76,7 @@
     "prettier": "^2.2.0",
     "prettier-eslint": "^12.0.0",
     "stylelint-config-recommended": "^3.0.0",
-    "tailwindcss": "^2.0.1",
+    "tailwindcss": "2.1.0",
     "tailwindcss-line-clamp": "^1.0.5",
     "typescript": "^4.1.2",
     "typescript-eslint-parser": "^22.0.0",

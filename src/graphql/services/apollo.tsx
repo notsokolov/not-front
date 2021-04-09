@@ -6,7 +6,6 @@ import {
   HttpLink,
 } from "@apollo/client";
 import { CLIENT_URL } from "~/graphql/constants";
-import Sentry from "~/sentry";
 
 // ensure that queries can run on the server during SSR and SSG
 // @ts-ignore
@@ -34,12 +33,10 @@ function createIsomorphLink() {
 const errorLink = onError(({ networkError, graphQLErrors }) => {
   if (graphQLErrors) {
     graphQLErrors.map((err) => {
-      Sentry.captureException(err);
       console.warn(err.message);
     });
   }
   if (networkError) {
-    Sentry.captureException(networkError);
     console.warn(networkError);
   }
 });

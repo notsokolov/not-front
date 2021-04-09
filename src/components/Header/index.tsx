@@ -50,19 +50,19 @@ export function Header() {
   let activeRoute = "";
   let activePath = "";
   if (router.pathname == "/") {
-    activeRoute = "Home";
+    activeRoute = "Главная";
     activePath = "/";
   }
   if (router.pathname.startsWith("/about")) {
-    activeRoute = "About";
+    activeRoute = "Эбаут";
     activePath = "/about";
   }
   if (router.pathname.includes("/bookmarks")) {
-    activeRoute = "Bookmarks";
+    activeRoute = "Закладки";
     activePath = "/bookmarks";
   }
   if (router.pathname.includes("/blog")) {
-    activeRoute = "Blog";
+    activeRoute = "Блог";
     activePath = "/blog";
   }
 

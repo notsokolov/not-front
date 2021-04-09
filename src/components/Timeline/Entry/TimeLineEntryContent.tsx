@@ -1,6 +1,4 @@
 import React from "react";
-import { format } from "date-fns";
-import { UpdatedAt } from "~/components/BlogPost/UpdatedAt";
 import { PublishedAt } from "../PublishedAt";
 
 export function TimeLineEntryContent({ title, date, children }) {

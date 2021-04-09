@@ -6,10 +6,19 @@
 }
 
 .classsss {
-  color: #445ff8;
   color: #3754f7;
+  color: #445ff8;
   color: #6077fa;
   color: #7c90fd;
+  color: #95a5ff;
+  color: #aab6fa;
+  color: #cad2ff;
+  color: #ecefff;
+  color: #e9ecff;
+
+
+
+
 
 }
 
@@ -59,7 +68,7 @@
 .stripe:nth-child(9) {
   grid-row: -4;
   grid-column: span 7 / viewport-end;
-  background-color: #e6ebf1;
+  background-color: #e6e7f1;
 }
 
 .stripe:nth-child(10) {

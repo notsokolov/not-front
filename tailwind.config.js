@@ -16,9 +16,11 @@ module.exports = {
       purple: colors.purple,
       blue: {
         'zalupa': "#f8f9ff",
+        'zalupa-plus': "#e9ecff",
+
         '50': '#eff6ff',
-        '100': '#dbeafe',
-        '200': '#bfdbfe',
+        '100': '#aab6fa',
+        '200': '#95a5ff',
         '300': '#7c90fd',
         '400': '#6077fa',
         '500': '#445ff8',

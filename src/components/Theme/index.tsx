@@ -38,7 +38,7 @@ const theme = {
   ],
   fonts: {
     body:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "'Inter',-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     monospace: "SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace",
   },
   fontWeights: {

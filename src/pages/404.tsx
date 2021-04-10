@@ -1,11 +1,18 @@
+import Link from "next/link";
 import * as React from "react";
 import { CenteredColumn } from "~/components/CenteredColumn";
-// import Home from "./index";
 
 export default function Error() {
   return (
     <CenteredColumn>
-      <h1>Страница Не Найдена: Ошибка 404</h1>
+      <h2 className="text-center">Страница Не Найдена: Ошибка 404</h2>
+      <Link href="/blog">
+        <a className="leading-snug pt-6 text-center text-xl text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
+          ‹‹ Вернуться на главную
+
+        </a>
+      </Link>
+
     </CenteredColumn>
   );
 }

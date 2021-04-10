@@ -43,14 +43,8 @@ export async function getAllPosts() {
         excerpt
         date
         updatedAt
-        coverImage {
-          url
-        }
         author {
           name
-          picture {
-            url
-          }
         }
       }
     }
@@ -77,17 +71,8 @@ export async function getPosts(slug: Slug) {
       content
       date
       updatedAt
-      ogImage: coverImage{
-        url
-      }
-      coverImage {
-        url
-      }
       author {
         name
-        picture {
-          url
-        }
       }
     }
 
@@ -97,14 +82,10 @@ export async function getPosts(slug: Slug) {
       excerpt
       updatedAt
       date
-      coverImage {
-        url
-      }
+
       author {
         name
-        picture {
-          url
-        }
+
       }
     }
   }
@@ -131,9 +112,6 @@ export async function getAboutContent() {
     query {
       about {
         content
-        picture{
-          url
-        }
       }
     }
   `

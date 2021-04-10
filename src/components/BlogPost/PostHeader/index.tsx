@@ -7,22 +7,14 @@ import { UpdatedAt } from "../UpdatedAt";
 
 interface Props {
   title: any;
-  coverImage: any;
   updatedAt: any;
 }
 
-export function PostHeader({ title, coverImage, updatedAt }: Props) {
+export function PostHeader({ title,  updatedAt }: Props) {
   return (
     <>
       <div className="flex flex-col space-y-4">
-        {/* <LinkBack /> */}
         <PostTitle title={title} />
-        {/* {coverImage && (
-          <PostImage
-            alt={title}
-            src={`http://192.168.0.102:1337${coverImage.url}`}
-          />
-        )} */}
         <p className="p-small">
           Обновлено <UpdatedAt updatedAt={updatedAt} />
         </p>

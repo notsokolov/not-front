@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 /* Write your own custom base styles here */
 
@@ -47,7 +47,7 @@ html {
   }
 
   .btn {
-    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-white border rounded shadow-sm hover:border-gray-300 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus:outline-none text-primary;
+    @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-white border rounded-sm shadow-sm hover:border-gray-300 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus:outline-none text-primary;
   }
 
   .btn-primary {
@@ -59,7 +59,7 @@ html {
   }
 
   .btn-large {
-    @apply px-6 py-3 font-semibold rounded-md;
+    @apply px-6 py-3 font-semibold rounded;
   }
 
   .tabbed-navigation::-webkit-scrollbar {
@@ -164,7 +164,7 @@ html {
   }
 
   .prose code {
-    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-gray-900;
+    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded bg-gray-100 dark:bg-gray-900;
   }
 
   .token.comment,

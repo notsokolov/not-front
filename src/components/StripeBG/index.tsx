@@ -17,18 +17,18 @@ export function StripeBG() {
             <div className="flex flex-col space-y-2 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:justify-center">
               <Link href="/about" passHref>
                 <a>
-                  <button className="w-full btn-primary btn text-lg btn-large font-normal">
+                  <button className="w-full btn-primary btn text-lg btn-large font-normal rounded-sm">
                     Мое Резюме
                   </button>
                 </a>
               </Link>
               <a
-                href="https://twitter.com/brian_lovin"
+                href="https://t.me/alexqlur"
                 target="_blank"
                 rel="noopener noreferrer"
               > 
-                <button className="w-full text-lg btn btn-large font-normal">
-                  Связаться со Мной
+                <button className="w-full text-lg btn btn-large font-normal rounded-sm">
+                  Написать в Telegram
                 </button>
               </a>
             </div>

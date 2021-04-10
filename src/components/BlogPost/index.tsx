@@ -18,7 +18,6 @@ export function BlogPost({ post }: { post: Post }) {
           </Head>
           <PostHeader
             title={post.title}
-            coverImage={post.coverImage}
             updatedAt={post.updatedAt}
           />
 

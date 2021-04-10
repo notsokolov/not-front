@@ -1,7 +1,4 @@
 import React from "react";
-import { LinkBack } from "../LinkBack";
-// import { Post, UploadFile } from "~/graphql/types.generated";
-// import { PostImage } from "../PostImage";
 import { PostTitle } from "../PostTitle";
 import { UpdatedAt } from "../UpdatedAt";
 

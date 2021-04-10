@@ -9,10 +9,8 @@ export default function Error() {
       <Link href="/blog">
         <a className="leading-snug pt-6 text-center text-xl text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
           ‹‹ Вернуться на главную
-
         </a>
       </Link>
-
     </CenteredColumn>
   );
 }

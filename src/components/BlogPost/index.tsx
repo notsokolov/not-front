@@ -14,10 +14,7 @@ export function BlogPost({ post }: { post: Post }) {
           <Head>
             <title>{post.title}</title>
           </Head>
-          <PostHeader
-            title={post.title}
-            updatedAt={post.updatedAt}
-          />
+          <PostHeader title={post.title} updatedAt={post.updatedAt} />
           <div className="mt-8">
             <MarkdownRenderer>{post.content}</MarkdownRenderer>
           </div>

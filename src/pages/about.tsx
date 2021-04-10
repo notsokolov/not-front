@@ -8,9 +8,9 @@ function About({ about }) {
   return (
     <CenteredColumn>
       <div className="flex flex-col space-y-12" data-cy="about-page">
-          <div className="prose lg:prose-lg">
-            <MarkdownRenderer>{about.content}</MarkdownRenderer>
-          </div>
+        <div className="prose lg:prose-lg">
+          <MarkdownRenderer>{about.content}</MarkdownRenderer>
+        </div>
       </div>
     </CenteredColumn>
   );

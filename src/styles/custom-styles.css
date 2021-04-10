@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
 /* Write your own custom base styles here */
+
+
+
 
 html {
   @apply text-base dark:bg-gray-900;

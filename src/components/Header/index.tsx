@@ -94,7 +94,6 @@ export function Header() {
                 width="16"
                 height="16"
               >
-                {" "}
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"

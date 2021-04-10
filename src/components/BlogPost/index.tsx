@@ -2,9 +2,7 @@ import * as React from "react";
 import { Post } from "~/graphql/types.generated";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { PostHeader } from "../../components/BlogPost/PostHeader";
-
 import Head from "next/head";
-// import { PostBody } from "./PostBody";
 import { MarkdownRenderer } from "../MarkdownRenderer";
 import { LinkBack } from "./LinkBack";
 
@@ -20,7 +18,6 @@ export function BlogPost({ post }: { post: Post }) {
             title={post.title}
             updatedAt={post.updatedAt}
           />
-
           <div className="mt-8">
             <MarkdownRenderer>{post.content}</MarkdownRenderer>
           </div>

@@ -2,7 +2,6 @@ import React from "react";
 import { PublishedAt } from "../PublishedAt";
 
 export function TimeLineEntryContent({ title, date, children }) {
-  // console.debug(date)
   return (
     <div className="flex flex-col flex-1 ml-4 space-y-4">
       <div className="flex flex-col pt-1 contents-center">

@@ -1,8 +1,6 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-
 import { getAllPostsWithSlug } from "../../../src/lib/api";
-
 import { PostTitle } from "../../components/BlogPost/PostTitle";
 import { BlogPost } from "../../components/BlogPost";
 import { CenteredColumn } from "~/components/CenteredColumn";
@@ -23,9 +21,7 @@ export default function SinglePost({ post }: { post: Post }) {
       {router.isFallback ? (
         <PostTitle title="Загрузга..." />
       ) : (
-        // <p>{post.content}</p>
         <BlogPost post={post} />
-        // <PostTitle title="PSHEL NA HUY" />
       )}
     </CenteredColumn>
   );

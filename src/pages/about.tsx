@@ -1,5 +1,4 @@
 import * as React from "react";
-import Image from "next/image";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { GetStaticProps } from "next";
 import { getAboutContent } from "~/lib/api";

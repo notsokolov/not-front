@@ -1,10 +1,8 @@
-import { title } from "process";
 import * as React from "react";
-import { BatteryCharging } from "react-feather";
 import { Post } from "~/graphql/types.generated";
 import { EntryBlogPost } from "./Entry/EntryBlogPost";
-// import { Year2020 } from "./2020";
-import { TimelineEntry } from "./Entry";
+// import { BatteryCharging } from "react-feather";
+// import { TimelineEntry } from "./Entry";
 
 interface Props {
   posts: Post[];
@@ -17,7 +15,7 @@ export function Timeline({ posts }: Props) {
         title="Work in progress..."
         date="More timeline entries coming soon"
         Icon={BatteryCharging}
-        color="yellow"
+        color="blue"
         divider={false}
       /> */}
       {posts.map((post) => {

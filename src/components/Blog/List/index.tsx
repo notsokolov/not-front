@@ -9,7 +9,6 @@ interface Props {
 
 export default function BlogList({ posts }: Props) {
   if (!posts || posts.length === 0) return null;
-  console.debug(posts.map((post) => post.id));
   return (
     <div className="flex flex-col space-y-5">
       {posts.map((post) => (

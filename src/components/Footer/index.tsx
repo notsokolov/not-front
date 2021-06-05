@@ -25,7 +25,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col space-y-4">
           <a
-            href="https://twitter.com/alexqlur"
+            href="https://twitter.com/notsokolov"
             target="_blank"
             rel="noopener noreferrer"
             className="black-link"
@@ -33,7 +33,7 @@ export function Footer() {
             @twitter
           </a>
           <a
-            href="https://instagram.com/alexqlur"
+            href="https://instagram.com/notsokolov"
             target="_blank"
             rel="noopener noreferrer"
             className="black-link"
@@ -41,7 +41,7 @@ export function Footer() {
             @instagram
           </a>
           <a
-            href="https://guthub.com/alexqlur"
+            href="https://guthub.com/notsokolov"
             target="_blank"
             rel="noopener noreferrer"
             className="black-link"

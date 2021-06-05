@@ -8,7 +8,7 @@ interface HeaderProps {
 export function PageHeader(props: HeaderProps) {
   const { title, subtitle } = props;
   return (
-    <div className="flex flex-col space-y-4 md:items-center md:text-center ">
+    <div className="flex flex-col space-y-4 ">
       <h1> {title}</h1>
       {subtitle && <p className="text-2xl leading-10">{subtitle}</p>}
     </div>

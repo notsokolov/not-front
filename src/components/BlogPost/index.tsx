@@ -18,7 +18,7 @@ export function BlogPost({ post }: { post: Post }) {
           <div className="mt-8">
             <MarkdownRenderer>{post.content}</MarkdownRenderer>
           </div>
-          <div className="mt-8">
+          <div className="mt-6">
             <LinkBack />
           </div>
         </CenteredColumn>

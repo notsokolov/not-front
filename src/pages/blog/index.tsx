@@ -13,7 +13,7 @@ interface Props {
 function Blog({ posts }: Props) {
   return (
     <CenteredColumn>
-      <div className="flex flex-col space-y-14">
+      <div className="flex flex-col space-y-8">
         <PageHeader
           title="Блог"
           subtitle="Пишу о разработке по-философски...😆"

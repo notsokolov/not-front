@@ -10,7 +10,7 @@ interface Props {
 export default function BlogList({ posts }: Props) {
   if (!posts || posts.length === 0) return null;
   return (
-    <div className="flex flex-col space-y-5">
+    <div className="flex flex-col space-y-6">
       {posts.map((post) => (
         <div className="flex flex-col space-y-1" key={post.id}>
           <Link href="/blog/[slug]" as={`/blog/${post.slug}`} passHref>

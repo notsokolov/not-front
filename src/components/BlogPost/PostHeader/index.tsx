@@ -2,7 +2,6 @@ import React from "react";
 import { PostTitle } from "../PostTitle";
 import { UpdatedAt } from "../UpdatedAt";
 
-
 interface Props {
   title: string;
   updatedAt: Date;

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import { CenteredColumn } from "~/components/CenteredColumn";
-import { PageHeader } from "~/components/PageHeader";
+import { PageHeader } from "../PageHeader";
 
-export function StripeBG() {
+export function Hero() {
   return (
     <header>
       <CenteredColumn>
@@ -32,29 +32,6 @@ export function StripeBG() {
           </div>
         </div>
       </CenteredColumn>
-      <div className="StripeGrid anchorBottom  ">
-        <div className="backgroundContainer">
-          <div className="grid">
-            <div className="background bg-primary"></div>
-          </div>
-        </div>
-
-        <div className="stripeContainer">
-          <div className="grid">
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-            <div className="stripe"></div>
-          </div>
-        </div>
-      </div>
     </header>
   );
 }

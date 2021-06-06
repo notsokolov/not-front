@@ -1,13 +1,13 @@
 import * as React from "react";
 import { PageHeader } from "~/components/PageHeader";
-import { Post } from "~/graphql/types.generated";
 import { BlogList } from "~/components/Blog/List";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { getAllPosts } from "../../lib/api";
 import { GetStaticProps } from "next";
+import { Posts } from "~/interfaces";
 
 interface Props {
-  posts: Post[];
+  posts: Posts;
 }
 
 function Blog({ posts }: Props) {
@@ -25,7 +25,7 @@ function Blog({ posts }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts: Post[] = (await getAllPosts()) || [];
+  const posts: Posts = (await getAllPosts()) || [];
   return {
     // because this data is slightly more dynamic, update it every hour
     revalidate: 60 * 60,

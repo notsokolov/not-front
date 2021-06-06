@@ -27,7 +27,7 @@ export default function SinglePost({ post }: { post: Post }) {
   );
 }
 
-export async function getStaticProps({ params }: { params: any}) {
+export async function getStaticProps({ params }: { params: any }) {
   const post = await getPost(params.slug);
 
   return {

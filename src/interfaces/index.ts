@@ -3,6 +3,7 @@
 // example, to import the interface below do:
 //
 // import { User } from 'path/to/interfaces';
+import { Post } from "~/graphql/types.generated";
 
 export type User = {
   id: number;
@@ -11,9 +12,11 @@ export type User = {
 
 export type Slug = string | null | undefined;
 
-export interface NavLinks  {
-    activeRoute: string;
-    activePath: string;
-    href: string;
-    title: string;
-  }
+export interface NavLinks {
+  activeRoute: string;
+  activePath: string;
+  href: string;
+  title: string;
+}
+
+export type Posts = Post[] | [];

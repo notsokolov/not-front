@@ -2,7 +2,7 @@ import Link from "next/link";
 import * as React from "react";
 import { CenteredColumn } from "~/components/CenteredColumn";
 
-export default function Error() {
+export default function Error404() {
   return (
     <CenteredColumn>
       <h2 className="text-center">Страница Не Найдена: Ошибка 404</h2>

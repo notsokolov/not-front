@@ -1,26 +1,31 @@
-export const navLinks = [
+export const Links = [
   {
-    activeRoute: "Home",
+    activeRoute: "Главная",
+    activePath: "/",
     href: "/",
     title: "Главная",
   },
   {
-    activeRoute: "About",
+    activeRoute: "Эбаут",
+    activePath: "/about",
     href: "/about",
     title: "Эбаут",
   },
   {
-    activeRoute: "Resume",
+    activeRoute: "Резюме",
+    activePath: "/resume",
     href: "/resume",
     title: "Резюме",
   },
   {
-    activeRoute: "Bookmarks",
+    activeRoute: "Закладки",
+    activePath: "/bookmarks",
     href: "/bookmarks",
     title: "Закладки",
   },
   {
-    activeRoute: "Blog",
+    activeRoute: "Блог",
+    activePath: "/blog",
     href: "/blog",
     title: "Блог",
   },

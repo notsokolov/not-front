@@ -1,26 +1,6 @@
 import styled, { css } from "styled-components";
 import theme from "../Theme";
 
-const base = css`
-  padding: 5px 8px 4px;
-  position: fixed;
-  top: -1px;
-  left: 0;
-  right: 0;
-  z-index: 4;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0;
-
-  a {
-    padding: 8px 32px;
-    border-radius: 4px;
-    width: 100%;
-    text-align: center;
-    margin: 0 1px;
-  }
-`;
-
 export const Background = styled.div`
   position: absolute;
   width: 100%;
@@ -33,7 +13,23 @@ export const Background = styled.div`
 `;
 
 export const Container = styled.header`
-  ${base};
+  padding: 5px 8px 4px;
+  position: fixed;
+  top: -1px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+
+  a {
+    padding: 8px 28px;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    margin: 0 1px;
+  }
   justify-content: space-around;
 
   @media (min-width: ${theme.breakpoints[4]}) {
@@ -56,7 +52,23 @@ export const InnerGrid = styled.div`
 `;
 
 export const MobileContainer = styled.header`
-  ${base};
+  padding: 5px 8px 4px;
+  position: fixed;
+  top: -1px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+
+  a {
+    padding: 8px 28px;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    margin: 0 1px;
+  }
 
   font-size: 16px;
   justify-content: center;
@@ -87,30 +99,3 @@ export const CloseButton = styled.div`
   position: relative;
 `;
 
-export const MenuButton = styled.div`
-  padding: 0 8px;
-  cursor: pointer;
-  z-index: 3;
-  position: relative;
-`;
-
-export const Label = styled.span.attrs(({ isActive }) => ({
-  className: `nav-label ${isActive && "active"}`,
-}))`
-  display: flex;
-  flex: 1;
-  z-index: 3;
-  position: relative;
-
-  a {
-    text-align: center;
-  }
-
-  @media (max-width: ${theme.breakpoints[4]}) {
-    width: 100%;
-
-    a {
-      text-align: left;
-    }
-  }
-`;

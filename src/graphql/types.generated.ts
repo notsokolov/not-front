@@ -106,117 +106,6 @@ export type DeleteAboutPayload = {
   about?: Maybe<About>;
 };
 
-export type Author = {
-  __typename?: 'Author';
-  id: Scalars['ID'];
-  _id: Scalars['ID'];
-  createdAt: Scalars['DateTime'];
-  updatedAt: Scalars['DateTime'];
-  name?: Maybe<Scalars['String']>;
-  published_at?: Maybe<Scalars['DateTime']>;
-};
-
-export type AuthorConnection = {
-  __typename?: 'AuthorConnection';
-  values?: Maybe<Array<Maybe<Author>>>;
-  groupBy?: Maybe<AuthorGroupBy>;
-  aggregate?: Maybe<AuthorAggregator>;
-};
-
-export type AuthorAggregator = {
-  __typename?: 'AuthorAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
-};
-
-export type AuthorGroupBy = {
-  __typename?: 'AuthorGroupBy';
-  id?: Maybe<Array<Maybe<AuthorConnectionId>>>;
-  _id?: Maybe<Array<Maybe<AuthorConnection_Id>>>;
-  createdAt?: Maybe<Array<Maybe<AuthorConnectionCreatedAt>>>;
-  updatedAt?: Maybe<Array<Maybe<AuthorConnectionUpdatedAt>>>;
-  name?: Maybe<Array<Maybe<AuthorConnectionName>>>;
-  published_at?: Maybe<Array<Maybe<AuthorConnectionPublished_At>>>;
-};
-
-export type AuthorConnectionId = {
-  __typename?: 'AuthorConnectionId';
-  key?: Maybe<Scalars['ID']>;
-  connection?: Maybe<AuthorConnection>;
-};
-
-export type AuthorConnection_Id = {
-  __typename?: 'AuthorConnection_id';
-  key?: Maybe<Scalars['ID']>;
-  connection?: Maybe<AuthorConnection>;
-};
-
-export type AuthorConnectionCreatedAt = {
-  __typename?: 'AuthorConnectionCreatedAt';
-  key?: Maybe<Scalars['DateTime']>;
-  connection?: Maybe<AuthorConnection>;
-};
-
-export type AuthorConnectionUpdatedAt = {
-  __typename?: 'AuthorConnectionUpdatedAt';
-  key?: Maybe<Scalars['DateTime']>;
-  connection?: Maybe<AuthorConnection>;
-};
-
-export type AuthorConnectionName = {
-  __typename?: 'AuthorConnectionName';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<AuthorConnection>;
-};
-
-export type AuthorConnectionPublished_At = {
-  __typename?: 'AuthorConnectionPublished_at';
-  key?: Maybe<Scalars['DateTime']>;
-  connection?: Maybe<AuthorConnection>;
-};
-
-export type AuthorInput = {
-  name?: Maybe<Scalars['String']>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type EditAuthorInput = {
-  name?: Maybe<Scalars['String']>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type CreateAuthorInput = {
-  data?: Maybe<AuthorInput>;
-};
-
-export type CreateAuthorPayload = {
-  __typename?: 'createAuthorPayload';
-  author?: Maybe<Author>;
-};
-
-export type UpdateAuthorInput = {
-  where?: Maybe<InputId>;
-  data?: Maybe<EditAuthorInput>;
-};
-
-export type UpdateAuthorPayload = {
-  __typename?: 'updateAuthorPayload';
-  author?: Maybe<Author>;
-};
-
-export type DeleteAuthorInput = {
-  where?: Maybe<InputId>;
-};
-
-export type DeleteAuthorPayload = {
-  __typename?: 'deleteAuthorPayload';
-  author?: Maybe<Author>;
-};
-
 export type Bookmark = {
   __typename?: 'Bookmark';
   id: Scalars['ID'];
@@ -224,7 +113,6 @@ export type Bookmark = {
   createdAt: Scalars['DateTime'];
   updatedAt: Scalars['DateTime'];
   title?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
   content?: Maybe<Scalars['String']>;
   published_at?: Maybe<Scalars['DateTime']>;
 };
@@ -249,7 +137,6 @@ export type BookmarkGroupBy = {
   createdAt?: Maybe<Array<Maybe<BookmarkConnectionCreatedAt>>>;
   updatedAt?: Maybe<Array<Maybe<BookmarkConnectionUpdatedAt>>>;
   title?: Maybe<Array<Maybe<BookmarkConnectionTitle>>>;
-  date?: Maybe<Array<Maybe<BookmarkConnectionDate>>>;
   content?: Maybe<Array<Maybe<BookmarkConnectionContent>>>;
   published_at?: Maybe<Array<Maybe<BookmarkConnectionPublished_At>>>;
 };
@@ -284,12 +171,6 @@ export type BookmarkConnectionTitle = {
   connection?: Maybe<BookmarkConnection>;
 };
 
-export type BookmarkConnectionDate = {
-  __typename?: 'BookmarkConnectionDate';
-  key?: Maybe<Scalars['ID']>;
-  connection?: Maybe<BookmarkConnection>;
-};
-
 export type BookmarkConnectionContent = {
   __typename?: 'BookmarkConnectionContent';
   key?: Maybe<Scalars['String']>;
@@ -304,7 +185,6 @@ export type BookmarkConnectionPublished_At = {
 
 export type BookmarkInput = {
   title?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
   content?: Maybe<Scalars['String']>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
@@ -313,7 +193,6 @@ export type BookmarkInput = {
 
 export type EditBookmarkInput = {
   title?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
   content?: Maybe<Scalars['String']>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
@@ -348,11 +227,6 @@ export type DeleteBookmarkPayload = {
   bookmark?: Maybe<Bookmark>;
 };
 
-export enum Enum_Post_Status {
-  Published = 'published',
-  Draft = 'draft'
-}
-
 export type Post = {
   __typename?: 'Post';
   id: Scalars['ID'];
@@ -362,10 +236,7 @@ export type Post = {
   title?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['String']>;
   excerpt?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
   slug?: Maybe<Scalars['String']>;
-  status?: Maybe<Enum_Post_Status>;
-  author?: Maybe<Author>;
   pinned?: Maybe<Scalars['Boolean']>;
   published_at?: Maybe<Scalars['DateTime']>;
 };
@@ -392,10 +263,7 @@ export type PostGroupBy = {
   title?: Maybe<Array<Maybe<PostConnectionTitle>>>;
   content?: Maybe<Array<Maybe<PostConnectionContent>>>;
   excerpt?: Maybe<Array<Maybe<PostConnectionExcerpt>>>;
-  date?: Maybe<Array<Maybe<PostConnectionDate>>>;
   slug?: Maybe<Array<Maybe<PostConnectionSlug>>>;
-  status?: Maybe<Array<Maybe<PostConnectionStatus>>>;
-  author?: Maybe<Array<Maybe<PostConnectionAuthor>>>;
   pinned?: Maybe<Array<Maybe<PostConnectionPinned>>>;
   published_at?: Maybe<Array<Maybe<PostConnectionPublished_At>>>;
 };
@@ -442,27 +310,9 @@ export type PostConnectionExcerpt = {
   connection?: Maybe<PostConnection>;
 };
 
-export type PostConnectionDate = {
-  __typename?: 'PostConnectionDate';
-  key?: Maybe<Scalars['ID']>;
-  connection?: Maybe<PostConnection>;
-};
-
 export type PostConnectionSlug = {
   __typename?: 'PostConnectionSlug';
   key?: Maybe<Scalars['String']>;
-  connection?: Maybe<PostConnection>;
-};
-
-export type PostConnectionStatus = {
-  __typename?: 'PostConnectionStatus';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<PostConnection>;
-};
-
-export type PostConnectionAuthor = {
-  __typename?: 'PostConnectionAuthor';
-  key?: Maybe<Scalars['ID']>;
   connection?: Maybe<PostConnection>;
 };
 
@@ -482,10 +332,7 @@ export type PostInput = {
   title?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['String']>;
   excerpt?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
   slug?: Maybe<Scalars['String']>;
-  status?: Maybe<Enum_Post_Status>;
-  author?: Maybe<Scalars['ID']>;
   pinned?: Maybe<Scalars['Boolean']>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
@@ -496,10 +343,7 @@ export type EditPostInput = {
   title?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['String']>;
   excerpt?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
   slug?: Maybe<Scalars['String']>;
-  status?: Maybe<Enum_Post_Status>;
-  author?: Maybe<Scalars['ID']>;
   pinned?: Maybe<Scalars['Boolean']>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
@@ -1147,7 +991,7 @@ export type DeleteUserPayload = {
   user?: Maybe<UsersPermissionsUser>;
 };
 
-export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | About | UpdateAboutPayload | DeleteAboutPayload | Author | AuthorConnection | AuthorAggregator | AuthorGroupBy | AuthorConnectionId | AuthorConnection_Id | AuthorConnectionCreatedAt | AuthorConnectionUpdatedAt | AuthorConnectionName | AuthorConnectionPublished_At | CreateAuthorPayload | UpdateAuthorPayload | DeleteAuthorPayload | Bookmark | BookmarkConnection | BookmarkAggregator | BookmarkGroupBy | BookmarkConnectionId | BookmarkConnection_Id | BookmarkConnectionCreatedAt | BookmarkConnectionUpdatedAt | BookmarkConnectionTitle | BookmarkConnectionDate | BookmarkConnectionContent | BookmarkConnectionPublished_At | CreateBookmarkPayload | UpdateBookmarkPayload | DeleteBookmarkPayload | Post | PostConnection | PostAggregator | PostGroupBy | PostConnectionId | PostConnection_Id | PostConnectionCreatedAt | PostConnectionUpdatedAt | PostConnectionTitle | PostConnectionContent | PostConnectionExcerpt | PostConnectionDate | PostConnectionSlug | PostConnectionStatus | PostConnectionAuthor | PostConnectionPinned | PostConnectionPublished_At | CreatePostPayload | UpdatePostPayload | DeletePostPayload | Resume | UpdateResumePayload | DeleteResumePayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnection_Id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnection_Id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnection_Id | UsersPermissionsUserConnectionCreatedAt | UsersPermissionsUserConnectionUpdatedAt | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
+export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | About | UpdateAboutPayload | DeleteAboutPayload | Bookmark | BookmarkConnection | BookmarkAggregator | BookmarkGroupBy | BookmarkConnectionId | BookmarkConnection_Id | BookmarkConnectionCreatedAt | BookmarkConnectionUpdatedAt | BookmarkConnectionTitle | BookmarkConnectionContent | BookmarkConnectionPublished_At | CreateBookmarkPayload | UpdateBookmarkPayload | DeleteBookmarkPayload | Post | PostConnection | PostAggregator | PostGroupBy | PostConnectionId | PostConnection_Id | PostConnectionCreatedAt | PostConnectionUpdatedAt | PostConnectionTitle | PostConnectionContent | PostConnectionExcerpt | PostConnectionSlug | PostConnectionPinned | PostConnectionPublished_At | CreatePostPayload | UpdatePostPayload | DeletePostPayload | Resume | UpdateResumePayload | DeleteResumePayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnection_Id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnection_Id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnection_Id | UsersPermissionsUserConnectionCreatedAt | UsersPermissionsUserConnectionUpdatedAt | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
 
 export type InputId = {
   id: Scalars['ID'];
@@ -1169,9 +1013,6 @@ export type AdminUser = {
 export type Query = {
   __typename?: 'Query';
   about?: Maybe<About>;
-  author?: Maybe<Author>;
-  authors?: Maybe<Array<Maybe<Author>>>;
-  authorsConnection?: Maybe<AuthorConnection>;
   bookmark?: Maybe<Bookmark>;
   bookmarks?: Maybe<Array<Maybe<Bookmark>>>;
   bookmarksConnection?: Maybe<BookmarkConnection>;
@@ -1193,29 +1034,6 @@ export type Query = {
 
 export type QueryAboutArgs = {
   publicationState?: Maybe<PublicationState>;
-};
-
-
-export type QueryAuthorArgs = {
-  id: Scalars['ID'];
-  publicationState?: Maybe<PublicationState>;
-};
-
-
-export type QueryAuthorsArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
-  publicationState?: Maybe<PublicationState>;
-};
-
-
-export type QueryAuthorsConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
 };
 
 
@@ -1336,9 +1154,6 @@ export type Mutation = {
   __typename?: 'Mutation';
   updateAbout?: Maybe<UpdateAboutPayload>;
   deleteAbout?: Maybe<DeleteAboutPayload>;
-  createAuthor?: Maybe<CreateAuthorPayload>;
-  updateAuthor?: Maybe<UpdateAuthorPayload>;
-  deleteAuthor?: Maybe<DeleteAuthorPayload>;
   createBookmark?: Maybe<CreateBookmarkPayload>;
   updateBookmark?: Maybe<UpdateBookmarkPayload>;
   deleteBookmark?: Maybe<DeleteBookmarkPayload>;
@@ -1367,21 +1182,6 @@ export type Mutation = {
 
 export type MutationUpdateAboutArgs = {
   input?: Maybe<UpdateAboutInput>;
-};
-
-
-export type MutationCreateAuthorArgs = {
-  input?: Maybe<CreateAuthorInput>;
-};
-
-
-export type MutationUpdateAuthorArgs = {
-  input?: Maybe<UpdateAuthorInput>;
-};
-
-
-export type MutationDeleteAuthorArgs = {
-  input?: Maybe<DeleteAuthorInput>;
 };
 
 

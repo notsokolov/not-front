@@ -76,111 +76,12 @@ type deleteAboutPayload {
   about: About
 }
 
-type Author {
-  id: ID!
-  _id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  name: String
-  published_at: DateTime
-}
-
-type AuthorConnection {
-  values: [Author]
-  groupBy: AuthorGroupBy
-  aggregate: AuthorAggregator
-}
-
-type AuthorAggregator {
-  count: Int
-  totalCount: Int
-}
-
-type AuthorGroupBy {
-  id: [AuthorConnectionId]
-  _id: [AuthorConnection_id]
-  createdAt: [AuthorConnectionCreatedAt]
-  updatedAt: [AuthorConnectionUpdatedAt]
-  name: [AuthorConnectionName]
-  published_at: [AuthorConnectionPublished_at]
-}
-
-type AuthorConnectionId {
-  key: ID
-  connection: AuthorConnection
-}
-
-type AuthorConnection_id {
-  key: ID
-  connection: AuthorConnection
-}
-
-type AuthorConnectionCreatedAt {
-  key: DateTime
-  connection: AuthorConnection
-}
-
-type AuthorConnectionUpdatedAt {
-  key: DateTime
-  connection: AuthorConnection
-}
-
-type AuthorConnectionName {
-  key: String
-  connection: AuthorConnection
-}
-
-type AuthorConnectionPublished_at {
-  key: DateTime
-  connection: AuthorConnection
-}
-
-input AuthorInput {
-  name: String
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input editAuthorInput {
-  name: String
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input createAuthorInput {
-  data: AuthorInput
-}
-
-type createAuthorPayload {
-  author: Author
-}
-
-input updateAuthorInput {
-  where: InputID
-  data: editAuthorInput
-}
-
-type updateAuthorPayload {
-  author: Author
-}
-
-input deleteAuthorInput {
-  where: InputID
-}
-
-type deleteAuthorPayload {
-  author: Author
-}
-
 type Bookmark {
   id: ID!
   _id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
   title: String
-  date: Date
   content: String
   published_at: DateTime
 }
@@ -202,7 +103,6 @@ type BookmarkGroupBy {
   createdAt: [BookmarkConnectionCreatedAt]
   updatedAt: [BookmarkConnectionUpdatedAt]
   title: [BookmarkConnectionTitle]
-  date: [BookmarkConnectionDate]
   content: [BookmarkConnectionContent]
   published_at: [BookmarkConnectionPublished_at]
 }
@@ -232,11 +132,6 @@ type BookmarkConnectionTitle {
   connection: BookmarkConnection
 }
 
-type BookmarkConnectionDate {
-  key: ID
-  connection: BookmarkConnection
-}
-
 type BookmarkConnectionContent {
   key: String
   connection: BookmarkConnection
@@ -249,7 +144,6 @@ type BookmarkConnectionPublished_at {
 
 input BookmarkInput {
   title: String
-  date: Date
   content: String
   published_at: DateTime
   created_by: ID
@@ -258,7 +152,6 @@ input BookmarkInput {
 
 input editBookmarkInput {
   title: String
-  date: Date
   content: String
   published_at: DateTime
   created_by: ID
@@ -290,11 +183,6 @@ type deleteBookmarkPayload {
   bookmark: Bookmark
 }
 
-enum ENUM_POST_STATUS {
-  published
-  draft
-}
-
 type Post {
   id: ID!
   _id: ID!
@@ -303,10 +191,7 @@ type Post {
   title: String
   content: String
   excerpt: String
-  date: Date
   slug: String
-  status: ENUM_POST_STATUS
-  author: Author
   pinned: Boolean
   published_at: DateTime
 }
@@ -330,10 +215,7 @@ type PostGroupBy {
   title: [PostConnectionTitle]
   content: [PostConnectionContent]
   excerpt: [PostConnectionExcerpt]
-  date: [PostConnectionDate]
   slug: [PostConnectionSlug]
-  status: [PostConnectionStatus]
-  author: [PostConnectionAuthor]
   pinned: [PostConnectionPinned]
   published_at: [PostConnectionPublished_at]
 }
@@ -373,23 +255,8 @@ type PostConnectionExcerpt {
   connection: PostConnection
 }
 
-type PostConnectionDate {
-  key: ID
-  connection: PostConnection
-}
-
 type PostConnectionSlug {
   key: String
-  connection: PostConnection
-}
-
-type PostConnectionStatus {
-  key: String
-  connection: PostConnection
-}
-
-type PostConnectionAuthor {
-  key: ID
   connection: PostConnection
 }
 
@@ -407,10 +274,7 @@ input PostInput {
   title: String
   content: String
   excerpt: String
-  date: Date
   slug: String
-  status: ENUM_POST_STATUS
-  author: ID
   pinned: Boolean
   published_at: DateTime
   created_by: ID
@@ -421,10 +285,7 @@ input editPostInput {
   title: String
   content: String
   excerpt: String
-  date: Date
   slug: String
-  status: ENUM_POST_STATUS
-  author: ID
   pinned: Boolean
   published_at: DateTime
   created_by: ID
@@ -1002,19 +863,6 @@ union Morph =
   | About
   | updateAboutPayload
   | deleteAboutPayload
-  | Author
-  | AuthorConnection
-  | AuthorAggregator
-  | AuthorGroupBy
-  | AuthorConnectionId
-  | AuthorConnection_id
-  | AuthorConnectionCreatedAt
-  | AuthorConnectionUpdatedAt
-  | AuthorConnectionName
-  | AuthorConnectionPublished_at
-  | createAuthorPayload
-  | updateAuthorPayload
-  | deleteAuthorPayload
   | Bookmark
   | BookmarkConnection
   | BookmarkAggregator
@@ -1024,7 +872,6 @@ union Morph =
   | BookmarkConnectionCreatedAt
   | BookmarkConnectionUpdatedAt
   | BookmarkConnectionTitle
-  | BookmarkConnectionDate
   | BookmarkConnectionContent
   | BookmarkConnectionPublished_at
   | createBookmarkPayload
@@ -1041,10 +888,7 @@ union Morph =
   | PostConnectionTitle
   | PostConnectionContent
   | PostConnectionExcerpt
-  | PostConnectionDate
   | PostConnectionSlug
-  | PostConnectionStatus
-  | PostConnectionAuthor
   | PostConnectionPinned
   | PostConnectionPublished_at
   | createPostPayload
@@ -1130,20 +974,6 @@ type AdminUser {
 
 type Query {
   about(publicationState: PublicationState): About
-  author(id: ID!, publicationState: PublicationState): Author
-  authors(
-    sort: String
-    limit: Int
-    start: Int
-    where: JSON
-    publicationState: PublicationState
-  ): [Author]
-  authorsConnection(
-    sort: String
-    limit: Int
-    start: Int
-    where: JSON
-  ): AuthorConnection
   bookmark(id: ID!, publicationState: PublicationState): Bookmark
   bookmarks(
     sort: String
@@ -1222,9 +1052,6 @@ type Query {
 type Mutation {
   updateAbout(input: updateAboutInput): updateAboutPayload
   deleteAbout: deleteAboutPayload
-  createAuthor(input: createAuthorInput): createAuthorPayload
-  updateAuthor(input: updateAuthorInput): updateAuthorPayload
-  deleteAuthor(input: deleteAuthorInput): deleteAuthorPayload
   createBookmark(input: createBookmarkInput): createBookmarkPayload
   updateBookmark(input: updateBookmarkInput): updateBookmarkPayload
   deleteBookmark(input: deleteBookmarkInput): deleteBookmarkPayload

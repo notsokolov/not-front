@@ -6,12 +6,7 @@ module.exports = {
   purge: ["./src/**/*.tsx"],
   darkMode: "media", // 'media' or 'class'
   theme: {
-
-    fontFamily: {
-      'sans': ['Inter']
-    },
-    
-    colors: {
+      colors: {
       yellow: colors.yellow,
       purple: colors.purple,
       blue: {

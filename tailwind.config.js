@@ -32,11 +32,7 @@ module.exports = {
       white: "#fff",
 
     },
-    lineClamp: {
-      1: 1,
-      2: 2,
-      3: 3,
-    },
+
     extend: {
       typography: (theme) => ({
         DEFAULT: {
@@ -79,7 +75,5 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("tailwindcss-line-clamp"),
   ],
 };

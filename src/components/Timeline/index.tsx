@@ -22,7 +22,7 @@ export function Timeline({ posts }: Props) {
         return (
           <EntryBlogPost
             key={post.id}
-            date={post.date}
+            updatedAt={post.updatedAt}
             slug={post.slug}
             title={post.title}
             excerpt={post.excerpt}

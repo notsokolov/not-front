@@ -7,7 +7,7 @@ interface Props {
   slug: string;
   title: string;
   excerpt: string;
-  date: string;
+  updatedAt: Date;
   divider?: boolean;
 }
 
@@ -15,7 +15,7 @@ export function EntryBlogPost({
   slug,
   title,
   excerpt,
-  date,
+  updatedAt,
   divider = true,
 }: Props) {
   return (
@@ -23,7 +23,7 @@ export function EntryBlogPost({
       title="Пост в блоге"
       color="blue"
       Icon={Edit2}
-      date={date}
+      date={updatedAt}
       divider={divider}
     >
       <Link passHref href={`/blog/${slug}`}>

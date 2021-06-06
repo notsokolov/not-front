@@ -1,5 +1,5 @@
 {
-  "name": "with-typescript",
+  "name": "my-portfolio-site",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -7,22 +7,17 @@
     "start": "next start",
     "type-check": "tsc",
     "lint": "eslint ./src/pages/* ./src/components/* ./src/api/* ./src/data/* ./src/graphql/* ./src/lib/* ./src/types/* -c .eslintrc.json --fix --ext ts,tsx",
-    "firebase": "cd src/firebase && firebase deploy --only functions && cd ../",
     "generate": "graphql-codegen",
     "generate:watch": "graphql-codegen --watch 'src/graphql/**/*.ts'",
     "format": "prettier --write **/*.ts **/*.tsx",
     "postinstall": "yarn generate"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.11",
-    "@apollo/link-error": "^2.0.0-beta.3",
     "@next/bundle-analyzer": "^10.0.8",
-    "@tailwindcss/forms": "^0.2.1",
-    "@tailwindcss/typography": "^0.4.0",
-    "@tippy.js/react": "^3.1.1",
+    
     "@zeit/next-source-maps": "^0.0.3",
     "apollo-server-micro": "^2.21.0",
-    "cookie": "^0.4.1",
+    
     "graphql": "^15.5.0",
     "graphql-tools-fork": "^9.0.1",
     "isomorphic-unfetch": "^3.1.0",
@@ -33,16 +28,16 @@
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
     "react-markdown": "^5.0.3",
-    "reflexbox": "^4.0.6",
+    
     "rehype-parse": "^7.0.1",
     "rehype-remark": "^8.0.0",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "remark-stringify": "^9.0.1",
     "serve-favicon": "^2.5.0",
-    "string-replace-to-array": "^1.0.3",
+    
     "styled-components": "^5.2.1",
-    "terser": "^5.6.0",
+    
     "theme-ui": "^0.3.5",
     "throttle-debounce": "^3.0.1",
     "timeago-react": "3.0.2",
@@ -57,11 +52,7 @@
     "@graphql-codegen/cli": "^1.19.2",
     "@graphql-codegen/typescript": "^1.17.11",
     "@graphql-codegen/typescript-operations": "^1.17.10",
-    "@graphql-codegen/typescript-react-apollo": "^2.1.1",
-    "@testing-library/cypress": "^7.0.1",
-    "@types/chai": "^4.2.14",
-    "@types/jest": "^26.0.15",
-    "@types/mocha": "^8.0.4",
+    "@tailwindcss/typography": "^0.4.1",
     "@types/node": "^14.14.7",
     "@types/react": "^16.14.1",
     "@typescript-eslint/eslint-plugin": "^4.8.1",

@@ -5,7 +5,7 @@ import { TimeLineEntryIcon } from "./TimeLineEntryIcon";
 interface TimelineEntryProps {
   children?: React.ReactChild | React.ReactChild[];
   title?: string;
-  date: string;
+  date: Date;
   Icon: any; //React.ElementType;
   color?: string;
   divider?: boolean;

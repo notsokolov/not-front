@@ -43,9 +43,7 @@ export async function getAllPosts() {
         excerpt
         date
         updatedAt
-        author {
-          name
-        }
+        pinned
       }
     }
   `,

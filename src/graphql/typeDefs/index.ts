@@ -183,8 +183,8 @@ export default gql`
     createdAt: DateTime!
     updatedAt: DateTime!
     title: String
-    content: String
     date: Date
+    content: String
     published_at: DateTime
   }
 
@@ -205,8 +205,8 @@ export default gql`
     createdAt: [BookmarkConnectionCreatedAt]
     updatedAt: [BookmarkConnectionUpdatedAt]
     title: [BookmarkConnectionTitle]
-    content: [BookmarkConnectionContent]
     date: [BookmarkConnectionDate]
+    content: [BookmarkConnectionContent]
     published_at: [BookmarkConnectionPublished_at]
   }
 
@@ -235,13 +235,13 @@ export default gql`
     connection: BookmarkConnection
   }
 
-  type BookmarkConnectionContent {
-    key: String
+  type BookmarkConnectionDate {
+    key: ID
     connection: BookmarkConnection
   }
 
-  type BookmarkConnectionDate {
-    key: ID
+  type BookmarkConnectionContent {
+    key: String
     connection: BookmarkConnection
   }
 
@@ -252,8 +252,8 @@ export default gql`
 
   input BookmarkInput {
     title: String
-    content: String
     date: Date
+    content: String
     published_at: DateTime
     created_by: ID
     updated_by: ID
@@ -261,8 +261,8 @@ export default gql`
 
   input editBookmarkInput {
     title: String
-    content: String
     date: Date
+    content: String
     published_at: DateTime
     created_by: ID
     updated_by: ID
@@ -310,6 +310,7 @@ export default gql`
     slug: String
     status: ENUM_POST_STATUS
     author: Author
+    pinned: Boolean
     published_at: DateTime
   }
 
@@ -336,6 +337,7 @@ export default gql`
     slug: [PostConnectionSlug]
     status: [PostConnectionStatus]
     author: [PostConnectionAuthor]
+    pinned: [PostConnectionPinned]
     published_at: [PostConnectionPublished_at]
   }
 
@@ -394,6 +396,11 @@ export default gql`
     connection: PostConnection
   }
 
+  type PostConnectionPinned {
+    key: Boolean
+    connection: PostConnection
+  }
+
   type PostConnectionPublished_at {
     key: DateTime
     connection: PostConnection
@@ -407,6 +414,7 @@ export default gql`
     slug: String
     status: ENUM_POST_STATUS
     author: ID
+    pinned: Boolean
     published_at: DateTime
     created_by: ID
     updated_by: ID
@@ -420,6 +428,7 @@ export default gql`
     slug: String
     status: ENUM_POST_STATUS
     author: ID
+    pinned: Boolean
     published_at: DateTime
     created_by: ID
     updated_by: ID
@@ -1018,8 +1027,8 @@ export default gql`
     | BookmarkConnectionCreatedAt
     | BookmarkConnectionUpdatedAt
     | BookmarkConnectionTitle
-    | BookmarkConnectionContent
     | BookmarkConnectionDate
+    | BookmarkConnectionContent
     | BookmarkConnectionPublished_at
     | createBookmarkPayload
     | updateBookmarkPayload
@@ -1039,6 +1048,7 @@ export default gql`
     | PostConnectionSlug
     | PostConnectionStatus
     | PostConnectionAuthor
+    | PostConnectionPinned
     | PostConnectionPublished_at
     | createPostPayload
     | updatePostPayload

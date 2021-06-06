@@ -180,8 +180,8 @@ type Bookmark {
   createdAt: DateTime!
   updatedAt: DateTime!
   title: String
-  content: String
   date: Date
+  content: String
   published_at: DateTime
 }
 
@@ -202,8 +202,8 @@ type BookmarkGroupBy {
   createdAt: [BookmarkConnectionCreatedAt]
   updatedAt: [BookmarkConnectionUpdatedAt]
   title: [BookmarkConnectionTitle]
-  content: [BookmarkConnectionContent]
   date: [BookmarkConnectionDate]
+  content: [BookmarkConnectionContent]
   published_at: [BookmarkConnectionPublished_at]
 }
 
@@ -232,13 +232,13 @@ type BookmarkConnectionTitle {
   connection: BookmarkConnection
 }
 
-type BookmarkConnectionContent {
-  key: String
+type BookmarkConnectionDate {
+  key: ID
   connection: BookmarkConnection
 }
 
-type BookmarkConnectionDate {
-  key: ID
+type BookmarkConnectionContent {
+  key: String
   connection: BookmarkConnection
 }
 
@@ -249,8 +249,8 @@ type BookmarkConnectionPublished_at {
 
 input BookmarkInput {
   title: String
-  content: String
   date: Date
+  content: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -258,8 +258,8 @@ input BookmarkInput {
 
 input editBookmarkInput {
   title: String
-  content: String
   date: Date
+  content: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -307,6 +307,7 @@ type Post {
   slug: String
   status: ENUM_POST_STATUS
   author: Author
+  pinned: Boolean
   published_at: DateTime
 }
 
@@ -333,6 +334,7 @@ type PostGroupBy {
   slug: [PostConnectionSlug]
   status: [PostConnectionStatus]
   author: [PostConnectionAuthor]
+  pinned: [PostConnectionPinned]
   published_at: [PostConnectionPublished_at]
 }
 
@@ -391,6 +393,11 @@ type PostConnectionAuthor {
   connection: PostConnection
 }
 
+type PostConnectionPinned {
+  key: Boolean
+  connection: PostConnection
+}
+
 type PostConnectionPublished_at {
   key: DateTime
   connection: PostConnection
@@ -404,6 +411,7 @@ input PostInput {
   slug: String
   status: ENUM_POST_STATUS
   author: ID
+  pinned: Boolean
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -417,6 +425,7 @@ input editPostInput {
   slug: String
   status: ENUM_POST_STATUS
   author: ID
+  pinned: Boolean
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1015,8 +1024,8 @@ union Morph =
   | BookmarkConnectionCreatedAt
   | BookmarkConnectionUpdatedAt
   | BookmarkConnectionTitle
-  | BookmarkConnectionContent
   | BookmarkConnectionDate
+  | BookmarkConnectionContent
   | BookmarkConnectionPublished_at
   | createBookmarkPayload
   | updateBookmarkPayload
@@ -1036,6 +1045,7 @@ union Morph =
   | PostConnectionSlug
   | PostConnectionStatus
   | PostConnectionAuthor
+  | PostConnectionPinned
   | PostConnectionPublished_at
   | createPostPayload
   | updatePostPayload

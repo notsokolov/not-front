@@ -11,7 +11,12 @@ export function Footer() {
         <div className="flex flex-col space-y-4">
           {Links.map((navLink) => {
             return (
-              <Link href={navLink.href} as={navLink.href} passHref>
+              <Link
+                href={navLink.href}
+                as={navLink.href}
+                passHref
+                key={navLink.href}
+              >
                 <a className="black-link">{navLink.title}</a>
               </Link>
             );
@@ -25,6 +30,7 @@ export function Footer() {
                 className="black-link"
                 target="_blank"
                 rel="noopener noreferrer"
+                key={socialLink.href}
               >
                 @{socialLink.name}
               </a>

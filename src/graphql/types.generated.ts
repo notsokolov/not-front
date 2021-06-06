@@ -231,8 +231,8 @@ export type Bookmark = {
   createdAt: Scalars["DateTime"];
   updatedAt: Scalars["DateTime"];
   title?: Maybe<Scalars["String"]>;
-  content?: Maybe<Scalars["String"]>;
   date?: Maybe<Scalars["Date"]>;
+  content?: Maybe<Scalars["String"]>;
   published_at?: Maybe<Scalars["DateTime"]>;
 };
 
@@ -256,8 +256,8 @@ export type BookmarkGroupBy = {
   createdAt?: Maybe<Array<Maybe<BookmarkConnectionCreatedAt>>>;
   updatedAt?: Maybe<Array<Maybe<BookmarkConnectionUpdatedAt>>>;
   title?: Maybe<Array<Maybe<BookmarkConnectionTitle>>>;
-  content?: Maybe<Array<Maybe<BookmarkConnectionContent>>>;
   date?: Maybe<Array<Maybe<BookmarkConnectionDate>>>;
+  content?: Maybe<Array<Maybe<BookmarkConnectionContent>>>;
   published_at?: Maybe<Array<Maybe<BookmarkConnectionPublished_At>>>;
 };
 
@@ -291,15 +291,15 @@ export type BookmarkConnectionTitle = {
   connection?: Maybe<BookmarkConnection>;
 };
 
-export type BookmarkConnectionContent = {
-  __typename?: "BookmarkConnectionContent";
-  key?: Maybe<Scalars["String"]>;
-  connection?: Maybe<BookmarkConnection>;
-};
-
 export type BookmarkConnectionDate = {
   __typename?: "BookmarkConnectionDate";
   key?: Maybe<Scalars["ID"]>;
+  connection?: Maybe<BookmarkConnection>;
+};
+
+export type BookmarkConnectionContent = {
+  __typename?: "BookmarkConnectionContent";
+  key?: Maybe<Scalars["String"]>;
   connection?: Maybe<BookmarkConnection>;
 };
 
@@ -311,8 +311,8 @@ export type BookmarkConnectionPublished_At = {
 
 export type BookmarkInput = {
   title?: Maybe<Scalars["String"]>;
-  content?: Maybe<Scalars["String"]>;
   date?: Maybe<Scalars["Date"]>;
+  content?: Maybe<Scalars["String"]>;
   published_at?: Maybe<Scalars["DateTime"]>;
   created_by?: Maybe<Scalars["ID"]>;
   updated_by?: Maybe<Scalars["ID"]>;
@@ -320,8 +320,8 @@ export type BookmarkInput = {
 
 export type EditBookmarkInput = {
   title?: Maybe<Scalars["String"]>;
-  content?: Maybe<Scalars["String"]>;
   date?: Maybe<Scalars["Date"]>;
+  content?: Maybe<Scalars["String"]>;
   published_at?: Maybe<Scalars["DateTime"]>;
   created_by?: Maybe<Scalars["ID"]>;
   updated_by?: Maybe<Scalars["ID"]>;
@@ -373,6 +373,7 @@ export type Post = {
   slug?: Maybe<Scalars["String"]>;
   status?: Maybe<Enum_Post_Status>;
   author?: Maybe<Author>;
+  pinned?: Maybe<Scalars["Boolean"]>;
   published_at?: Maybe<Scalars["DateTime"]>;
 };
 
@@ -402,6 +403,7 @@ export type PostGroupBy = {
   slug?: Maybe<Array<Maybe<PostConnectionSlug>>>;
   status?: Maybe<Array<Maybe<PostConnectionStatus>>>;
   author?: Maybe<Array<Maybe<PostConnectionAuthor>>>;
+  pinned?: Maybe<Array<Maybe<PostConnectionPinned>>>;
   published_at?: Maybe<Array<Maybe<PostConnectionPublished_At>>>;
 };
 
@@ -471,6 +473,12 @@ export type PostConnectionAuthor = {
   connection?: Maybe<PostConnection>;
 };
 
+export type PostConnectionPinned = {
+  __typename?: "PostConnectionPinned";
+  key?: Maybe<Scalars["Boolean"]>;
+  connection?: Maybe<PostConnection>;
+};
+
 export type PostConnectionPublished_At = {
   __typename?: "PostConnectionPublished_at";
   key?: Maybe<Scalars["DateTime"]>;
@@ -485,6 +493,7 @@ export type PostInput = {
   slug?: Maybe<Scalars["String"]>;
   status?: Maybe<Enum_Post_Status>;
   author?: Maybe<Scalars["ID"]>;
+  pinned?: Maybe<Scalars["Boolean"]>;
   published_at?: Maybe<Scalars["DateTime"]>;
   created_by?: Maybe<Scalars["ID"]>;
   updated_by?: Maybe<Scalars["ID"]>;
@@ -498,6 +507,7 @@ export type EditPostInput = {
   slug?: Maybe<Scalars["String"]>;
   status?: Maybe<Enum_Post_Status>;
   author?: Maybe<Scalars["ID"]>;
+  pinned?: Maybe<Scalars["Boolean"]>;
   published_at?: Maybe<Scalars["DateTime"]>;
   created_by?: Maybe<Scalars["ID"]>;
   updated_by?: Maybe<Scalars["ID"]>;
@@ -1173,8 +1183,8 @@ export type Morph =
   | BookmarkConnectionCreatedAt
   | BookmarkConnectionUpdatedAt
   | BookmarkConnectionTitle
-  | BookmarkConnectionContent
   | BookmarkConnectionDate
+  | BookmarkConnectionContent
   | BookmarkConnectionPublished_At
   | CreateBookmarkPayload
   | UpdateBookmarkPayload
@@ -1194,6 +1204,7 @@ export type Morph =
   | PostConnectionSlug
   | PostConnectionStatus
   | PostConnectionAuthor
+  | PostConnectionPinned
   | PostConnectionPublished_At
   | CreatePostPayload
   | UpdatePostPayload

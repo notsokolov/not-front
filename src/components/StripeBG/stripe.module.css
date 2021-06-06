@@ -2,54 +2,10 @@
   position: relative;
 }
 
-.StripeWrapper .StripeGrid .backgroundContainer .background {
+.background {
   grid-row: 1/-4;
   background-color: rgba(105, 129, 238, 0.055);
 }
-
-.StripeBackground {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  right: 0;
-  -webkit-transform: skewY(-10deg);
-  transform: skewY(-10deg);
-  pointer-events: none;
-}
-
-.StripeBackground .stripe {
-  position: absolute;
-  top: auto;
-  left: 0;
-  right: 0;
-}
-
-.StripeBackground .stripe.pattern {
-  overflow: hidden;
-}
-
-.StripeBackground .stripe.pattern:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1000px;
-  top: -1000px;
-  -webkit-transform: skew(0, 10deg);
-  transform: skew(0, 10deg);
-}
-
-/* .StripeGrid {
-  --stripe-height: 48px;
-  --content-columns: 12;
-  --gutter-columns: 4;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  pointer-events: none;
-} */
 
 .StripeGrid {
   --stripe-height: 48px;
@@ -77,8 +33,8 @@
   }
 }
 
-.StripeGrid .backgroundContainer,
-.StripeGrid .stripeContainer {
+.backgroundContainer,
+.stripeContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,8 +57,8 @@
   min-width: 0;
 }
 
-.StripeGrid .backgroundContainer .background {
-  grid-row: 1/-1;
+.background {
+
   grid-column: 1/-1;
   z-index: -1;
 }

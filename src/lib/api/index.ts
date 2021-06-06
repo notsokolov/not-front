@@ -1,5 +1,4 @@
 export async function fetchAPI(query: any, { variables }: any = {}) {
-  
   const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/graphql`, {
     method: "POST",
     headers: {
@@ -18,7 +17,6 @@ export async function fetchAPI(query: any, { variables }: any = {}) {
   }
 
   return json.data;
-  
 }
 
 export { getPost } from "./getPost";

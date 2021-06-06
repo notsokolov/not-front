@@ -15,14 +15,14 @@ export function Hero() {
               subtitle="JavaScript-разработчик из Санкт-Петербурга. Делаю приложения на Node.js и для браузера."
             />
             <div className="flex flex-col space-y-2 md:space-x-4 md:flex-row md:space-y-0 md:items-center md:justify-center">
-              <Link href="/about" passHref>
+              <Link href="/resume" passHref>
                 <a rel="noopener noreferrer">
                   <button className="w-full btn-primary btn text-lg btn-large font-normal rounded">
                     Мое Резюме
                   </button>
                 </a>
               </Link>
-              <Link href="https://t.me/alexqlur" passHref>
+              <Link href="https://t.me/notsokolov" passHref>
                 <a target="_blank" rel="noopener noreferrer">
                   <button className="w-full text-lg btn btn-large font-normal rounded">
                     Написать в Telegram

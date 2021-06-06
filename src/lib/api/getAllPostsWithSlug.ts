@@ -1,4 +1,4 @@
-import { fetchAPI } from './index';
+import { fetchAPI } from "./index";
 
 export async function getAllPostsWithSlug() {
   const data = fetchAPI(`

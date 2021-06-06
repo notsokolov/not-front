@@ -19,9 +19,7 @@ export function Footer() {
           <Link href="/blog" as="/blog" passHref>
             <a className="black-link">Блог</a>
           </Link>
-          {/* <Link href="/bookmarks" as="/bookmarks" passHref>
-            <a className="black-link">Закладки</a>
-          </Link> */}
+
         </div>
         <div className="flex flex-col space-y-4">
           <a

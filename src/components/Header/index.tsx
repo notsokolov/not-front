@@ -33,6 +33,11 @@ const navLinks = [
     title: "Резюме",
   },
   {
+    activeRoute: "Bookmarks",
+    href: "/bookmarks",
+    title: "Закладки",
+  },
+  {
     activeRoute: "Blog",
     href: "/blog",
     title: "Блог",

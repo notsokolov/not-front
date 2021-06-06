@@ -7,7 +7,7 @@ interface Props {
   posts: Post[];
 }
 
-export default function BlogList({ posts }: Props) {
+export function BlogList({ posts }: Props) {
   if (!posts || posts.length === 0) return null;
   return (
     <div className="flex flex-col space-y-6">

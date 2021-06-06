@@ -8,8 +8,6 @@ export const PostInfoFragment = gql`
     slug
     updatedAt
     excerpt
-    coverImage {
-      url
-    }
+
   }
 `;

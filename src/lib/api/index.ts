@@ -60,6 +60,22 @@ export async function getAllPosts() {
   return data?.posts;
 }
 
+export async function getAllBookmarks() {
+  const data = await fetchAPI(
+    `
+    query Bookmarks {
+      bookmarks (sort: "date:desc", limit: 50) {
+        id
+        title
+        content
+        date
+       }
+    }
+  `
+  );
+  return data?.bookmarks;
+}
+
 export async function getPosts(slug: Slug) {
   const data = await fetchAPI(
     `

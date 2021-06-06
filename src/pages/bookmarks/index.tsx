@@ -1,38 +1,38 @@
 import * as React from "react";
 import { PageHeader } from "~/components/PageHeader";
-import { Post } from "~/graphql/types.generated";
-import { BlogList } from "~/components/Blog/List";
+import { Bookmark } from "~/graphql/types.generated";
 import { CenteredColumn } from "~/components/CenteredColumn";
-import { getAllPosts } from "../../lib/api";
+import { getAllBookmarks } from "../../lib/api";
 import { GetStaticProps } from "next";
+import { BookmarksList } from "~/components/BookmarksList";
 
 interface Props {
-  posts: Post[];
+    bookmarks: Bookmark[];
 }
 
-function Blog({ posts }: Props) {
+export default function Bookmarks({ bookmarks }: Props) {
   return (
     <CenteredColumn>
       <div className="flex flex-col space-y-8">
         <PageHeader
-          title="Блог"
+          title="Закладки"
           subtitle="Пишу о разработке по-философски...😆"
         />
-        {posts && <BlogList posts={posts} />}
+        {bookmarks && <BookmarksList bookmarks={bookmarks} />}
       </div>
     </CenteredColumn>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts: any = (await getAllPosts()) || [];
+  const bookmarks: Bookmark[] = (await getAllBookmarks()) || [];
   return {
     // because this data is slightly more dynamic, update it every hour
     revalidate: 60 * 60,
     props: {
-      posts,
+        bookmarks,
     },
   };
 };
 
-export default Blog;
+

@@ -16,8 +16,8 @@ export function Header() {
   const [isExpanded, setExpanded] = React.useState(false);
   const router = useRouter();
 
-  let activeRoute = "";
-  let activePath = "";
+  let activeRoute: string = "";
+  let activePath: string = "";
 
   Links.map((link) => {
     if (router.pathname == link.activePath) {

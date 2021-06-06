@@ -1,4 +1,6 @@
-export const Links = [
+import { NavLinks } from "~/interfaces";
+
+export const Links: NavLinks[] = [
   {
     activeRoute: "Главная",
     activePath: "/",

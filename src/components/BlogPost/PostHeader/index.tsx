@@ -2,9 +2,10 @@ import React from "react";
 import { PostTitle } from "../PostTitle";
 import { UpdatedAt } from "../UpdatedAt";
 
+
 interface Props {
-  title: any;
-  updatedAt: any;
+  title: string;
+  updatedAt: Date;
 }
 
 export function PostHeader({ title, updatedAt }: Props) {

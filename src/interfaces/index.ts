@@ -10,3 +10,10 @@ export type User = {
 };
 
 export type Slug = string | null | undefined;
+
+export interface NavLinks  {
+    activeRoute: string;
+    activePath: string;
+    href: string;
+    title: string;
+  }

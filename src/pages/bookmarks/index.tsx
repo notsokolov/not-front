@@ -16,7 +16,7 @@ export default function Bookmarks({ bookmarks }: Props) {
       <div className="flex flex-col space-y-8">
         <PageHeader
           title="Закладки"
-          subtitle="Пишу о разработке по-философски...😆"
+          subtitle="Сохраняю здесь, чтобы легко найти потом! 😎 "
         />
         {bookmarks && <BookmarksList bookmarks={bookmarks} />}
       </div>

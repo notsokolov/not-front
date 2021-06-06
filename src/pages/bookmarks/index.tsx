@@ -2,7 +2,7 @@ import * as React from "react";
 import { PageHeader } from "~/components/PageHeader";
 import { Bookmark } from "~/graphql/types.generated";
 import { CenteredColumn } from "~/components/CenteredColumn";
-import { getAllBookmarks } from "../../lib/api";
+import { getAllBookmarks } from "~/lib/api";
 import { GetStaticProps } from "next";
 import { BookmarksList } from "~/components/BookmarksList";
 

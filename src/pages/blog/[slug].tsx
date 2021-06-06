@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import { getAllPostsWithSlug } from "../../../src/lib/api";
+import { getAllPostsWithSlug } from "~/lib/api";
 import { PostTitle } from "../../components/BlogPost/PostTitle";
 import { BlogPost } from "../../components/BlogPost";
 import { CenteredColumn } from "~/components/CenteredColumn";

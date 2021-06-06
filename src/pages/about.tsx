@@ -3,8 +3,13 @@ import { CenteredColumn } from "~/components/CenteredColumn";
 import { GetStaticProps } from "next";
 import { getAboutContent } from "~/lib/api";
 import { MarkdownRenderer } from "~/components/MarkdownRenderer";
+import { About } from "~/graphql/types.generated";
 
-function About({ about }) {
+interface Props {
+  about: About;
+}
+
+export default function AboutPage({ about }: Props) {
   return (
     <CenteredColumn>
       <div className="flex flex-col space-y-12" data-cy="about-page">
@@ -17,12 +22,10 @@ function About({ about }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const about: any = (await getAboutContent()) || [];
+  const about: About = (await getAboutContent()) || [];
   return {
     props: {
       about,
     },
   };
 };
-
-export default About;

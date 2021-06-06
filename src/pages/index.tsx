@@ -24,7 +24,7 @@ function Home({ posts }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts: any = (await getAllPosts()) || [];
+  const posts: Posts = (await getAllPosts()) || [];
   return {
     // because this data is slightly more dynamic, update it every hour
     revalidate: 60 * 60,

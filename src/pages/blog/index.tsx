@@ -2,7 +2,7 @@ import * as React from "react";
 import { PageHeader } from "~/components/PageHeader";
 import { BlogList } from "~/components/Blog/List";
 import { CenteredColumn } from "~/components/CenteredColumn";
-import { getAllPosts } from "../../lib/api";
+import { getAllPosts } from "~/lib/api";
 import { GetStaticProps } from "next";
 import { Posts } from "~/interfaces";
 
@@ -15,10 +15,10 @@ function Blog({ posts }: Props) {
     <CenteredColumn>
       <div className="flex flex-col space-y-8">
         <div className=" px-4">
-        <PageHeader
-          title="Блог"
-          subtitle="Пишу о разработке по-философски...😆"
-        />
+          <PageHeader
+            title="Блог"
+            subtitle="Пишу о разработке по-философски...😆"
+          />
         </div>
         {posts && <BlogList posts={posts} />}
       </div>

@@ -4,15 +4,13 @@ import { CenteredColumn } from "~/components/CenteredColumn";
 import { Timeline } from "~/components/Timeline";
 import { Posts } from "~/interfaces";
 import { getAllPosts } from "~/lib/api";
-// import Link from "next/link";
-// import { Timeline } from "~/components/Timeline";
 import { Hero } from "../components/Hero";
 
 interface Props {
   posts: Posts;
 }
 
-function Home({ posts }: Props) {
+export default function HomePage({ posts }: Props) {
   return (
     <>
       <Hero />
@@ -34,4 +32,3 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Home;

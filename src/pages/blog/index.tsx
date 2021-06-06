@@ -10,7 +10,7 @@ interface Props {
   posts: Posts;
 }
 
-function Blog({ posts }: Props) {
+export default function Blog({ posts }: Props) {
   return (
     <CenteredColumn>
       <div className="flex flex-col space-y-8">
@@ -37,4 +37,3 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Blog;

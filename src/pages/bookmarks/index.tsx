@@ -7,7 +7,7 @@ import { GetStaticProps } from "next";
 import { BookmarksList } from "~/components/BookmarksList";
 
 interface Props {
-    bookmarks: Bookmark[];
+  bookmarks: Bookmark[];
 }
 
 export default function Bookmarks({ bookmarks }: Props) {
@@ -30,9 +30,7 @@ export const getStaticProps: GetStaticProps = async () => {
     // because this data is slightly more dynamic, update it every hour
     revalidate: 60 * 60,
     props: {
-        bookmarks,
+      bookmarks,
     },
   };
 };
-
-

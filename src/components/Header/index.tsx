@@ -11,28 +11,27 @@ import {
   Background,
 } from "./style";
 
-
-import { navLinks } from '~/components/NavLinks'
+import { navLinks } from "~/components/NavLinks";
 interface Props {
   activeRoute: string;
   setExpanded: any;
 }
 
-
-
 const NavLinks = ({ activeRoute, setExpanded }: Props) => {
   return (
     <React.Fragment>
       {navLinks.map((navLink) => {
-        return(
-          <Label key={navLink.activeRoute} isActive={activeRoute == navLink.activeRoute}>
+        return (
+          <Label
+            key={navLink.activeRoute}
+            isActive={activeRoute == navLink.activeRoute}
+          >
             <Link href={navLink.href}>
               <a onClick={() => setExpanded(false)}>{navLink.title}</a>
             </Link>
           </Label>
-        )
+        );
       })}
-
     </React.Fragment>
   );
 };

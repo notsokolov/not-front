@@ -3,13 +3,18 @@ import { CenteredColumn } from "~/components/CenteredColumn";
 import { GetStaticProps } from "next";
 import { getResumeContent } from "~/lib/api";
 import { MarkdownRenderer } from "~/components/MarkdownRenderer";
+import { Resume } from "~/graphql/types.generated";
 
-export default function Resume({ resume }) {
+interface Props {
+  resume: Resume;
+}
+
+export default function ResumePage({ resume }: Props) {
   return (
     <CenteredColumn>
       <div className="flex flex-col space-y-12" data-cy="about-page">
         <div className="prose lg:prose-lg">
-          <MarkdownRenderer>{resume.content}</MarkdownRenderer>
+          <MarkdownRenderer>{resume?.content}</MarkdownRenderer>
         </div>
       </div>
     </CenteredColumn>
@@ -17,7 +22,7 @@ export default function Resume({ resume }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const resume: any = (await getResumeContent()) || [];
+  const resume: Resume = (await getResumeContent()) || [];
   return {
     props: {
       resume,

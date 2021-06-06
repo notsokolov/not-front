@@ -98,4 +98,3 @@ export const CloseButton = styled.div`
   z-index: 3;
   position: relative;
 `;
-

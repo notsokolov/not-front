@@ -46,7 +46,7 @@ export function Header() {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <div 
+            <div
               className="text-primary cursor-pointer z-10 pl-2"
               onClick={() => setExpanded(true)}
             >

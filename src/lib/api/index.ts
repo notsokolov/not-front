@@ -76,11 +76,11 @@ export async function getAllBookmarks() {
   return data?.bookmarks;
 }
 
-export async function getPosts(slug: Slug) {
+export async function getPost(slug: Slug) {
   const data = await fetchAPI(
     `
-  query PostBySlug($where: JSON, $where_ne: JSON) {
-    posts(where: $where) {
+  query PostBySlug($where: JSON) {
+    posts (where: $where) {
       id
       title
       slug
@@ -91,35 +91,17 @@ export async function getPosts(slug: Slug) {
         name
       }
     }
-
-    morePosts: posts(sort: "date:desc", limit: 2, where: $where_ne) {
-      title
-      slug
-      excerpt
-      updatedAt
-      date
-
-      author {
-        name
-
-      }
-    }
   }
   `,
     {
       variables: {
         where: {
           slug,
-          ...{ status: "published" },
-        },
-        where_ne: {
-          ...{ status: "published" },
-          slug_ne: slug,
         },
       },
     }
   );
-  return data;
+  return data?.posts[0];
 }
 
 export async function getAboutContent() {

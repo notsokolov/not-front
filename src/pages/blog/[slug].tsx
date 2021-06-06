@@ -4,7 +4,7 @@ import { getAllPostsWithSlug } from "../../../src/lib/api";
 import { PostTitle } from "../../components/BlogPost/PostTitle";
 import { BlogPost } from "../../components/BlogPost";
 import { CenteredColumn } from "~/components/CenteredColumn";
-import { getPosts } from "~/lib/api";
+import { getPost } from "~/lib/api";
 import { Post } from "~/graphql/types.generated";
 
 export default function SinglePost({ post }: { post: Post }) {
@@ -27,23 +27,12 @@ export default function SinglePost({ post }: { post: Post }) {
   );
 }
 
-export async function getStaticProps({
-  params,
-  preview = false,
-}: {
-  params: any;
-  preview: boolean;
-}) {
-  const data = await getPosts(params.slug);
-  const content = data?.posts[0]?.content;
+export async function getStaticProps({ params }: { params: any}) {
+  const post = await getPost(params.slug);
 
   return {
     props: {
-      preview,
-      post: {
-        ...data?.posts[0],
-        content,
-      },
+      post,
     },
   };
 }
@@ -51,7 +40,7 @@ export async function getStaticProps({
 export async function getStaticPaths() {
   const data = await getAllPostsWithSlug();
   return {
-    paths: data?.posts?.map((post: any) => `/blog/${post.slug}`) || [],
+    paths: data?.posts?.map((post: Post) => `/blog/${post.slug}`) || [],
     fallback: false,
   };
 }

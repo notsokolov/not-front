@@ -36,12 +36,11 @@ export async function getAllPosts() {
   const data = await fetchAPI(
     `
     query Posts($where: JSON){
-      posts(sort: "date:desc", limit: 10, where: $where) {
+      posts(sort: "updatedAt:desc", limit: 10, where: $where) {
         id
         title
         slug
         excerpt
-        date
         updatedAt
         pinned
       }
@@ -83,11 +82,8 @@ export async function getPost(slug: Slug) {
       title
       slug
       content
-      date
+      
       updatedAt
-      author {
-        name
-      }
     }
   }
   `,

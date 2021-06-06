@@ -3,14 +3,12 @@ import React from "react";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { PageHeader } from "../PageHeader";
 import { StripeBG } from "~/components/StripeBG";
-import intro from "./textStyles.module.css";
 
 export function Hero() {
   return (
     <header className="StripeWrapper relative">
       <CenteredColumn>
         <div className=" flex flex-col space-y-24">
-          <div className={intro.intro}>
             <div className="pb-96 pt-16 text-center mx-auto flex flex-col space-y-8 md:items-center">
               <PageHeader
                 title="🐙 Привет, я Алексей!"
@@ -32,7 +30,6 @@ export function Hero() {
                   </a>
                 </Link>
               </div>
-            </div>
           </div>
         </div>
       </CenteredColumn>

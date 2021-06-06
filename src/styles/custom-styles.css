@@ -25,7 +25,7 @@ html {
   }
 
   h5 {
-    @apply text-lg font-bold text-gray-1000 dark:text-gray-50;
+    @apply text-lg font-semibold text-gray-1000 dark:text-gray-50;
   }
 
   h4 {

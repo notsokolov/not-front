@@ -14,7 +14,7 @@ export function BookmarksList({ bookmarks }: Props) {
     <div className="flex flex-col space-y-6">
       {bookmarks.map((bookmark) => (
         <article className="flex flex-col space-y-1" key={bookmark.id}>
-          <h4>{bookmark.title}</h4>
+          <h5>{bookmark.title}</h5>
 
           <main className="pl-4 border-l-2 border-gray-300 border-dotted">
             <div className="py-1">

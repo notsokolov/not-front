@@ -14,10 +14,12 @@ function Blog({ posts }: Props) {
   return (
     <CenteredColumn>
       <div className="flex flex-col space-y-8">
+        <div className=" px-4">
         <PageHeader
           title="Блог"
           subtitle="Пишу о разработке по-философски...😆"
         />
+        </div>
         {posts && <BlogList posts={posts} />}
       </div>
     </CenteredColumn>

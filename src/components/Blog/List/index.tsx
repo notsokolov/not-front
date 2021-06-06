@@ -11,15 +11,13 @@ interface Props {
 export function BlogList({ posts }: Props) {
   if (!posts || posts.length === 0) return null;
   return (
-    <div className="flex flex-col space-y-6">
+    <div className="flex flex-col">
       {posts.map((post: Post) => {
-        if (post.pinned == true) {
-          return console.log("pinned");
-        } else {
+       
           return (
-            <div className="flex flex-col space-y-1" key={post.id}>
+            <div className={`space-y-1 px-4 my-1 ${ post.pinned ? " py-3 order-first bg-indigo-50 rounded-md" : "py-2 "}`} key={post.id}>
               <Link href="/blog/[slug]" as={`/blog/${post.slug}`} passHref>
-                <a className="text-blue-600 dark:text-blue-500">{post.title}</a>
+                <a className="text-indigo-500 hover:text-indigo-900">{post.title}</a>
               </Link>
               {post.excerpt && <p className="clamp-2">{post.excerpt}</p>}
               <p className="p-small">
@@ -27,7 +25,7 @@ export function BlogList({ posts }: Props) {
               </p>
             </div>
           );
-        }
+       
       })}
     </div>
   );

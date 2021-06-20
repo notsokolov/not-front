@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { CenteredColumn } from "../CenteredColumn";
 import { Links, socialLinks } from "~/components/Links";

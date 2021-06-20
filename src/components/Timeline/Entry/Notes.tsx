@@ -1,4 +1,3 @@
-import * as React from "react";
 import { MarkdownRenderer } from "../../MarkdownRenderer";
 
 export function Notes({ content }: any) {

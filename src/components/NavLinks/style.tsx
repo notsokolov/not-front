@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import theme from "../Theme";
 
 export const Label = styled.span.attrs(({ isActive }) => ({
   className: `nav-label ${isActive && "active"}`,
@@ -13,7 +12,7 @@ export const Label = styled.span.attrs(({ isActive }) => ({
     text-align: center;
   }
 
-  @media (max-width: ${theme.breakpoints[4]}) {
+  @media (max-width: 768px) {
     width: 100%;
 
     a {

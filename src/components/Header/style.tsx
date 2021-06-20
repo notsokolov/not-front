@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components";
-import theme from "../Theme";
+import styled from "styled-components";
 
 export const Background = styled.div`
   position: absolute;
@@ -32,10 +31,10 @@ export const Container = styled.header`
   }
   justify-content: space-around;
 
-  @media (min-width: ${theme.breakpoints[4]}) {
+  @media (min-width: 768px) {
     display: flex;
   }
-  @media (max-width: ${theme.breakpoints[4]}) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -45,7 +44,7 @@ export const InnerGrid = styled.div`
   justify-content: center;
   width: 100%;
   justify-self: center;
-  max-width: ${theme.breakpoints[3]};
+  max-width: 968px;
   position: relative;
   grid-template-columns: repeat(6, max-content);
   z-index: 3;
@@ -81,10 +80,10 @@ export const MobileContainer = styled.header`
     padding: 12px;
   }
 
-  @media (min-width: ${theme.breakpoints[4]}) {
+  @media (min-width: 768px) {
     display: none;
   }
-  @media (max-width: ${theme.breakpoints[4]}) {
+  @media (max-width: 768px) {
     display: flex;
   }
 `;

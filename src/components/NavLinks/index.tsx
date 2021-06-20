@@ -2,8 +2,8 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Label } from "./style";
-
 import { Links } from "~/components/Links";
+
 interface Props {
   activeRoute: string;
   setExpanded: any;

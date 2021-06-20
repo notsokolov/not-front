@@ -1,4 +1,3 @@
-import * as React from "react";
 import Link from "next/link";
 import { TimelineEntry } from ".";
 import { Edit2 } from "react-feather";

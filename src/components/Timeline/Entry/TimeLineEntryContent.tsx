@@ -1,4 +1,3 @@
-import React from "react";
 import { PublishedAt } from "../PublishedAt";
 
 export function TimeLineEntryContent({ title, date, children }) {

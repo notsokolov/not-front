@@ -1,16 +1,16 @@
-import * as React from "react";
 import { PageHeader } from "~/components/PageHeader";
 import { BlogList } from "~/components/Blog/List";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { getAllPosts } from "~/lib/api";
 import { GetStaticProps } from "next";
-import { Posts } from "~/interfaces";
+import { FC } from "react";
+import { Post } from "~/graphql/types.generated";
 
 interface Props {
-  posts: Posts;
+  posts: Array<Post>;
 }
 
-export default function Blog({ posts }: Props) {
+const Blog: FC<Props> = ({ posts }) => {
   return (
     <CenteredColumn>
       <div className="flex flex-col space-y-8">
@@ -24,10 +24,10 @@ export default function Blog({ posts }: Props) {
       </div>
     </CenteredColumn>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts: Posts = (await getAllPosts()) || [];
+  const posts: Array<Post> = (await getAllPosts()) || [];
   return {
     // because this data is slightly more dynamic, update it every hour
     revalidate: 60 * 60,
@@ -36,3 +36,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+export default Blog;

@@ -1,14 +1,13 @@
-import * as React from "react";
+import { FC } from "react";
 import { Post } from "~/graphql/types.generated";
 import Link from "next/link";
 import { UpdatedAt } from "~/components/BlogPost/UpdatedAt";
-import { Posts } from "~/interfaces";
 
 interface Props {
-  posts: Posts;
+  posts: Array<Post>;
 }
 
-export function BlogList({ posts }: Props) {
+ export const BlogList: FC<Props> = ({ posts }) => {
   if (!posts || posts.length === 0) return null;
   return (
     <div className="flex flex-col">
@@ -18,7 +17,7 @@ export function BlogList({ posts }: Props) {
             className={`space-y-1 px-4 my-1 ${
               post.pinned
                 ? " py-3 order-first bg-indigo-50 rounded-md"
-                : "py-2 "
+                : "py-2"
             }`}
             key={post.id}
           >
@@ -37,3 +36,4 @@ export function BlogList({ posts }: Props) {
     </div>
   );
 }
+

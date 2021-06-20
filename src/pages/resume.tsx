@@ -1,4 +1,3 @@
-import * as React from "react";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { GetStaticProps } from "next";
 import { getResumeContent } from "~/lib/api";

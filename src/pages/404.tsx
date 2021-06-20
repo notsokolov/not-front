@@ -1,5 +1,4 @@
 import Link from "next/link";
-import * as React from "react";
 import { CenteredColumn } from "~/components/CenteredColumn";
 
 export default function Error404() {

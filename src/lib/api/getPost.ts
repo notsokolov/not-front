@@ -1,7 +1,6 @@
-import { Slug } from "~/interfaces";
 import { fetchAPI } from "./index";
 
-export async function getPost(slug: Slug) {
+export async function getPost(slug: any) {
   const data = await fetchAPI(
     `
   query PostBySlug($where: JSON) {

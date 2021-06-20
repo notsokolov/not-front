@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Post } from "~/graphql/types.generated";
 import { EntryBlogPost } from "./Entry/EntryBlogPost";
 // import { BatteryCharging } from "react-feather";

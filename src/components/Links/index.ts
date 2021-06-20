@@ -1,6 +1,12 @@
-import { NavLinks } from "~/interfaces";
 
-export const Links: NavLinks[] = [
+interface NavLink {
+  activeRoute: string,
+  activePath: string,
+  href: string,
+  title: string,
+}
+
+export const Links: Array<NavLink> = [
   {
     activeRoute: "Главная",
     activePath: "/",

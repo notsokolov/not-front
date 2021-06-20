@@ -1,4 +1,4 @@
-import * as React from "react";
+import { FC } from "react";
 import { CenteredColumn } from "~/components/CenteredColumn";
 import { GetStaticProps } from "next";
 import { getAboutContent } from "~/lib/api";
@@ -9,7 +9,7 @@ interface Props {
   about: About;
 }
 
-export default function AboutPage({ about }: Props) {
+const AboutPage: FC<Props> = ({ about }) => {
   return (
     <CenteredColumn>
       <div className="flex flex-col space-y-12" data-cy="about-page">
@@ -19,6 +19,10 @@ export default function AboutPage({ about }: Props) {
       </div>
     </CenteredColumn>
   );
+};
+
+function zalupa(zalupa: string): number {
+  return 4;
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -29,3 +33,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+export default AboutPage;

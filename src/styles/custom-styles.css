@@ -18,7 +18,7 @@ html {
     @apply font-semibold;
   }
 
-  h6 {
+  /* h6 {
     @apply text-base font-bold text-gray-1000 dark:text-gray-50;
   }
 
@@ -40,7 +40,7 @@ html {
 
   h1 {
     @apply text-4xl font-bold text-gray-1000 dark:text-gray-50;
-  }
+  } */
 
   .btn {
     @apply flex items-center justify-center px-4 py-2 space-x-2 text-sm font-medium transition-shadow bg-white border rounded shadow-sm hover:border-gray-300 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus:outline-none text-primary;
@@ -58,7 +58,7 @@ html {
     @apply px-6 py-3 font-semibold rounded;
   }
 
-  .tabbed-navigation::-webkit-scrollbar {
+  /* .tabbed-navigation::-webkit-scrollbar {
     display: none;
   }
 
@@ -72,7 +72,8 @@ html {
 
   .tab-inactive {
     @apply text-gray-600 border-b-2 border-gray-50 dark:text-gray-400 dark:border-gray-1000 hover:text-gray-1000 dark:hover:text-gray-50 hover:border-gray-300 dark:hover:border-gray-700;
-  }
+  } */
+  
 }
 
 /* Your own custom utilities */
@@ -140,14 +141,23 @@ html {
     left: 0;
   }
 
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply font-medium
+  }
   .prose strong,
   .prose b {
     @apply text-gray-1000 dark:text-gray-50;
   }
 
   .prose pre {
-    @apply bg-gray-100 border border-gray-200 dark:border-gray-700 dark:bg-gray-800;
+    @apply text-indigo-500 bg-indigo-50 border border-indigo-200 dark:border-gray-700 dark:bg-gray-800;
   }
+
 
   /* this is needed to avoid HN comments from overflowing off the right edge of the screen */
   .prose p {
@@ -160,7 +170,11 @@ html {
   }
 
   .prose code {
-    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded bg-gray-100 dark:bg-gray-900;
+    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-sm bg-gray-100 dark:bg-gray-900;
+  }
+
+  .prose ol li {
+    @apply my-0
   }
 
   .token.comment,

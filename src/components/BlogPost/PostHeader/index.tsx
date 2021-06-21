@@ -10,7 +10,7 @@ interface Props {
 export function PostHeader({ title, updatedAt }: Props) {
   return (
     <>
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-2 max-w-xl">
         <PostTitle title={title} />
         <p className="p-small">
           Обновлено <UpdatedAt updatedAt={updatedAt} />

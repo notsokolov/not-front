@@ -13,6 +13,7 @@ interface Props {
 }
 
 const SinglePost: FC<Props> = ({ post }) => {
+  // console.log(content)
   const router = useRouter();
   if (!router.isFallback && !post) {
     return (
@@ -25,20 +26,21 @@ const SinglePost: FC<Props> = ({ post }) => {
   if (router.isFallback) {
     return (
       <CenteredColumn>
-      <PostTitle title="Загрузга..." />
-    </CenteredColumn>
+        <PostTitle title="Загрузга..." />
+      </CenteredColumn>
     );
   }
 
   return (
     <CenteredColumn>
-    <BlogPost post={post} />
-  </CenteredColumn>
+      <BlogPost post={post} />
+    </CenteredColumn>
   );
 };
 
 export async function getStaticProps({ params }: { params: any }) {
   const post = await getPost(params.slug);
+
   return {
     props: {
       post,

@@ -1,9 +1,8 @@
-
 interface NavLink {
-  activeRoute: string,
-  activePath: string,
-  href: string,
-  title: string,
+  activeRoute: string;
+  activePath: string;
+  href: string;
+  title: string;
 }
 
 export const Links: Array<NavLink> = [

@@ -7,7 +7,7 @@ interface Props {
   posts: Array<Post>;
 }
 
- export const BlogList: FC<Props> = ({ posts }) => {
+export const BlogList: FC<Props> = ({ posts }) => {
   if (!posts || posts.length === 0) return null;
   return (
     <div className="flex flex-col">
@@ -15,9 +15,7 @@ interface Props {
         return (
           <div
             className={`space-y-1 px-4 my-1 ${
-              post.pinned
-                ? " py-3 order-first bg-indigo-50 rounded-md"
-                : "py-2"
+              post.pinned ? "py-3 order-first bg-indigo-50 rounded-md" : "py-2"
             }`}
             key={post.id}
           >
@@ -35,5 +33,4 @@ interface Props {
       })}
     </div>
   );
-}
-
+};

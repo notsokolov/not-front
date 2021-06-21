@@ -11,13 +11,13 @@ interface Props {
 export function BookmarksList({ bookmarks }: Props) {
   if (!bookmarks || bookmarks.length === 0) return null;
   return (
-    <div className="flex flex-col space-y-6">
+    <div className="flex flex-col space-y-4">
       {bookmarks.map((bookmark) => (
-        <article className="flex flex-col space-y-1" key={bookmark.id}>
-          <h5>{bookmark.title}</h5>
+        <article className="flex flex-col" key={bookmark.id}>
+          <h5 className="text-base font-medium">{bookmark.title}</h5>
 
-          <main className="pl-4 border-l-2 border-gray-300 border-dotted">
-            <div className="py-1">
+          <main className="pl-4 border-l-2 border-gray-200 ">
+            <div className="prose">
               <MarkdownRenderer>{bookmark.content}</MarkdownRenderer>
             </div>
             {/* <p className="p-small">

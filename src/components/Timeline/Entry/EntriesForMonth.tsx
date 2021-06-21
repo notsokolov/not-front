@@ -1,4 +1,3 @@
-
 export function EntriesForMonth({ month }: any) {
   return (
     <div className="flex items-center mb-8 timeline-item">
